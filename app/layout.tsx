@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import phone from '@/public/phone.png'
+import {ReduxProvider } from '@/lib/provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,16 +18,21 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-      <div className="relative h-screen flex items-center justify-center">
+    <html lang='en'>
+        <body>
+        <div className="relative h-screen flex items-center justify-center">
         <div className="main-wrapper bg-cover bg-no-repeat bg-center relative">
           <Image
             src={phone}
             alt="Phone"
           />
-    
+            <ReduxProvider >
           {children}
-         
+          </ReduxProvider>
+
         </div>
-      </div>
+      </div> 
+        </body>
+      </html>
   )
 }

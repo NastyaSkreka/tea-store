@@ -9,19 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "latest",
-    "react-dom": "latest",
-    "next": "latest"
+    "@reduxjs/toolkit": "^2.0.1",
+    "axios": "^1.6.4",
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-query": "^3.39.3",
+    "react-redux": "^9.0.4"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/react": "latest",
+    "@types/next-redux-wrapper": "^3.0.0",
     "@types/node": "latest",
+    "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest"
+    "typescript": "latest"
   }
 }

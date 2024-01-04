@@ -22,6 +22,7 @@
     max-width: 350px;
     min-height: 600px;
     background: #ffff;
+    overflow: hidden;
 }
 
 .main-wrapper > img {
@@ -37,6 +38,7 @@
     border-radius: 60px;
     padding: 30px;
     width: 100%;
-    height: 100%;
+    height: 600px;
+    object-fit: cover;
     background: #ffff;
 }
