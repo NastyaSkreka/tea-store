@@ -1,6 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Image from 'next/image'
+import phone from '@/public/phone.png'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,8 +17,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+      <div className="relative h-screen flex items-center justify-center">
+        <div className="main-wrapper bg-cover bg-no-repeat bg-center relative">
+          <Image
+            src={phone}
+            alt="Phone"
+          />
+    
+          {children}
+         
+        </div>
+      </div>
   )
 }
