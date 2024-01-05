@@ -23,16 +23,17 @@
   min-height: 600px;
   background: #ffff;
   overflow: hidden;
+  min-height: 620px;
 }
 
 .main-wrapper > img {
   height: 100%;
   width: 100%;
   position: absolute;
-  z-index: 100;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  overflow: hidden;
 }
 
 .main-wrapper main {
@@ -42,4 +43,5 @@
   height: 600px;
   object-fit: cover;
   background: #ffff;
+  overflow: hidden;
 }
