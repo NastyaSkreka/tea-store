@@ -8,7 +8,6 @@ export default function TeaFeatured() {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  console.log(data);
 
   return (
     <section className="mt-5">
@@ -16,7 +15,7 @@ export default function TeaFeatured() {
         Featured tea shops
       </div>
       <div className="-mx-4 mt-5 flex flex-wrap overflow-hidden">
-        {data.map((teaShop: any) => (
+        {data && data.map((teaShop: any) => (
           <TeaShopItem key={teaShop.id} {...teaShop} />
         ))}
       </div>

@@ -10,7 +10,7 @@ function isHydrateAction(action: Action): action is PayloadAction<RootState> {
 
 const teaApi = createApi({
   reducerPath: 'teaApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://boonakitea.cyclic.app/api/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }),
   extractRehydrationInfo(action, { reducerPath }) {
     if (isHydrateAction(action)) {
       return action.payload[reducerPath];
