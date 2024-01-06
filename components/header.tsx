@@ -1,10 +1,10 @@
 import React from 'react';
 
-type HeaderProps = {
+interface IProps  {
   children: React.ReactNode;
 };
 
-export default function Header({ children }: HeaderProps) {
+export default function Header({ children }:IProps) {
   return (
     <header>
       <div className="mt-[23px]">{children}</div>
