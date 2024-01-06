@@ -13,8 +13,8 @@ export default function FilterICon() {
         x2="19"
         y2="4"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <line
         x1="1"
@@ -22,11 +22,11 @@ export default function FilterICon() {
         x2="9"
         y2="14"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
-      <circle cx="4" cy="4" r="3" stroke="white" stroke-width="2" />
-      <circle cx="16" cy="14" r="3" stroke="white" stroke-width="2" />
+      <circle cx="4" cy="4" r="3" stroke="white" strokeWidth="2" />
+      <circle cx="16" cy="14" r="3" stroke="white" strokeWidth="2" />
     </svg>
   );
 }

@@ -11,8 +11,8 @@ export default function StarIcon() {
         d="M7.5 0.818497L9.5085 4.8875L14 5.544L10.75 8.7095L11.517 13.1815L7.5 11.069L3.483 13.1815L4.25 8.7095L1 5.544L5.4915 4.8875L7.5 0.818497Z"
         fill="#FDCB6E"
         stroke="#FDCB6E"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

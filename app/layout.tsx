@@ -4,6 +4,8 @@ import Image from 'next/image';
 import phone from '@/public/image/phone.png';
 import { ReduxProvider } from '@/lib/provider';
 import './globals.css';
+import MainWrapper from '@/components/MainWrapper';
+import { ReactNode } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,16 +17,20 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en">
       <body>
-        <div className="relative  flex h-screen items-center justify-center">
-          <div className="main-wrapper relative bg-cover bg-center bg-no-repeat">
+        <div className="relative flex h-screen items-center justify-center">
+          <MainWrapper>
             <Image src={phone} alt="Phone" />
-            <ReduxProvider>{children}</ReduxProvider>
-          </div>
+            <ReduxProvider>
+              <main>
+                {children}
+              </main>
+            </ReduxProvider>
+          </MainWrapper>
         </div>
       </body>
     </html>
