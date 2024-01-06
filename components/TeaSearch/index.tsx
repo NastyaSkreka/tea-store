@@ -12,12 +12,9 @@ export default function TeaSearch() {
         <div className="relative">
           <input
             type="text"
-            className="rounded-2xl bg-teaBackground p-2   pl-[50px] outline-none"
+            className="rounded-2xl bg-teaBackground p-2 outline-none"
             placeholder="Search"
           />
-          <div className="absolute inset-y-0  flex items-center pl-6">
-            <SearchIcon />
-          </div>
         </div>
         <div className="flex items-center">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-teaBlue">

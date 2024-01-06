@@ -24,5 +24,14 @@
     height: 600px;
     object-fit: cover;
     background: #ffff;
-    overflow: hidden;
+    overflow: scroll;
+    margin: 20px 0;
+}
+
+.main-wrapper main::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.main-wrapper main::-webkit-scrollbar-thumb {
+    background-color: transparent;
 }
