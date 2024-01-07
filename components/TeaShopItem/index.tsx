@@ -4,7 +4,7 @@ import Image from 'next/image';
 import StarIcon from '@/public/start-icon';
 import FavHeart from '@/public/favheart-icon';
 
-export default function TeaShopItem({ name }: any) {
+export default function TeaShopItem({ id, name }: any) {
   return (
     <div className="relative mb-4 w-full px-4  md:w-1/2 ">
       <div className="absolute right-[15px] top-[-5px]  rounded-full border-2 border-white bg-teaGrayLight p-1">

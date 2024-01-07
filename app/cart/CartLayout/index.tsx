@@ -3,15 +3,15 @@ import { ReactNode } from 'react';
 import NavFooter from '@/components/NavFooter';
 
 interface IProps {
-  children?: ReactNode
-  path?: string
+  children?: ReactNode;
+  path?: string;
 }
 export default function CartLayout({ children, path }: IProps) {
-  return(
+  return (
     <>
-    <Header variant='with-arr-path' path={path}/>
-      { children }
-     <NavFooter/>
+      <Header variant="with-arr-path" path={path} />
+      {children}
+      <NavFooter />
     </>
-  )
+  );
 }
