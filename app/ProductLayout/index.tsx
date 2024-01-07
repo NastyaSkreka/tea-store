@@ -8,7 +8,7 @@ interface IProps {
 export default function ProductLayout({ children }: IProps) {
   return (
     <>
-      <Header variant="full" />
+      <Header variant="full" path="product"/>
       {children}
       <Footer variant='btn-full'/>
     </>
