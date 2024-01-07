@@ -4,7 +4,7 @@ import FilterICon from '@/public/filter-icon';
 
 export default function TeaSearch() {
   return (
-    <section className="mt-2">
+    <section className="mt-16">
       <div className="max-w-40 text-xl font-semibold text-teaBlue">
         Find a tea shop anywhere
       </div>
