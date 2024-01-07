@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { ReactNode } from 'react';
 
@@ -9,6 +10,7 @@ export default function ProductLayout({ children }: IProps) {
     <>
       <Header variant="full" />
       {children}
+      <Footer variant='btn-full'/>
     </>
   );
 }

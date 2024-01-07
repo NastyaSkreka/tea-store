@@ -1,6 +1,6 @@
 import Header from '@/components/Header';
 import { ReactNode } from 'react';
-import NavFooter from '@/components/NavFooter';
+import Footer from '@/components/Footer';
 
 interface IProps {
   children: ReactNode;
@@ -10,7 +10,7 @@ export default function HomeLayout({ children }: IProps) {
     <>
       <Header variant="full" />
       {children}
-      <NavFooter />
+      <Footer variant='nav' />
     </>
   );
 }
