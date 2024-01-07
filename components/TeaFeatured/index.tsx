@@ -15,9 +15,10 @@ export default function TeaFeatured() {
         Featured tea shops
       </div>
       <div className="-mx-4 mt-5 flex flex-wrap overflow-hidden">
-        {data && data.map((teaShop: any) => (
-          <TeaShopItem key={teaShop.id} {...teaShop} />
-        ))}
+        {data &&
+          data.map((teaShop: any) => (
+            <TeaShopItem key={teaShop.id} {...teaShop} />
+          ))}
       </div>
     </section>
   );

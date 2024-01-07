@@ -2,13 +2,13 @@ import Header from '@/components/Header';
 import { ReactNode } from 'react';
 
 interface IProps {
-  children: ReactNode
+  children: ReactNode;
 }
-export default function ProductLayout({ children }: IProps){
-  return(
+export default function ProductLayout({ children }: IProps) {
+  return (
     <>
-      <Header variant='full'/>
-      { children }
+      <Header variant="full" />
+      {children}
     </>
-  )
+  );
 }

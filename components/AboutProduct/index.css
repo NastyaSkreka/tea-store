@@ -1,8 +1,8 @@
 .background-image {
-    position: absolute;
-    top: 0;
-    left: 10px;
-    width: 331px;
-    height: 347px;
-    object-fit: contain;
-  }
+  position: absolute;
+  top: 17px;
+  left: 19px;
+  width: 312px;
+  height: 287px;
+  object-fit: contain;
+}
