@@ -10,7 +10,7 @@ export default function HomeLayout({ children }: IProps) {
     <>
       <Header variant="full" />
       {children}
-      <Footer variant='nav' />
+      <Footer variant="nav" />
     </>
   );
 }
