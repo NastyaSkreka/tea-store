@@ -1,6 +1,6 @@
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { ReactNode } from 'react';
-import NavFooter from '@/components/NavFooter';
 
 interface IProps {
   children?: ReactNode;
@@ -11,7 +11,7 @@ export default function CartLayout({ children, path }: IProps) {
     <>
       <Header variant="with-arr-path" path={path} />
       {children}
-      <NavFooter />
+      <Footer variant='nav' />
     </>
   );
 }
