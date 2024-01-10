@@ -1,29 +1,33 @@
 import React from 'react';
 import mockup from '@/public/image/mockup.png';
-import Image from 'next/image';
 import StarIcon from '@/public/start-icon';
 import FavHeart from '@/public/favheart-icon';
+import {
+    TeaShopCard, 
+    FavHeartContainer,
+    StyledImage,
+    RatingContainer,
+    TeaShopTitle,
+    ReviewsCount,
+    Distance
 
-export default function TeaShopItem({ id, name }: any) {
+} from './styles'
+import Image from 'next/image';
+ 
+export default function TeaShopItem({  name }: any) {
   return (
-    <div className="relative mb-4 w-full px-4  md:w-1/2 ">
-      <div className="absolute right-[15px] top-[-5px]  rounded-full border-2 border-white bg-teaGrayLight p-1">
+    <TeaShopCard>
+      <FavHeartContainer>
         <FavHeart />
-      </div>
-      <Image
-        className="mb-2 w-full overflow-hidden object-cover"
-        src={mockup}
-        width={153}
-        height={164}
-        alt="tea"
-      />
-      <div className="text-md font-semibold text-teaGreen">{name}</div>
-      <div className="flex items-center space-x-1">
+      </FavHeartContainer>
+      <Image src={mockup} width={153} height={164} alt="tea" />
+      <TeaShopTitle>{name}</TeaShopTitle>
+      <RatingContainer>
         <StarIcon />
-        <span className="text-md font-semibold text-gray-800">4.5</span>
-        <span className="text-sm text-teaGray">1,200 reviews</span>
-      </div>
-      <span className="text-sm font-semibold text-teaDeepBlue">3.8 miles</span>
-    </div>
+        <span>4.5</span>
+        <ReviewsCount>1,200 reviews</ReviewsCount>
+      </RatingContainer>
+      <Distance>3.8 miles</Distance>
+    </TeaShopCard>
   );
 }

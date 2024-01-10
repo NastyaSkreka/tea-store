@@ -15,7 +15,7 @@
   left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
-  z-index: 100;
+
 }
 
 .main-wrapper main {
