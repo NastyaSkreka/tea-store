@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <div className="relative flex h-screen items-center justify-center">
+        <div className='container'>
           <MainWrapper>
             <Image src={phone} alt="Phone" />
             <ReduxProvider>
