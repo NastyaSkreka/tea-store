@@ -6,7 +6,7 @@ import Dropdown from '@/components/ui/Dropdown';
 
 export default function CartItem() {
   return (
-    <div className="my-5">
+    <div className="my-5 bg-neutral-100 rounded-md">
       <div className="flex gap-3">
         <div className="flex flex-col">
           <Image width={120} height={125} src={cart} alt="item" />
@@ -14,7 +14,7 @@ export default function CartItem() {
             <Dropdown
               label="Qty:2"
               size="w-[64px]"
-              content={['Qty:2', 'Qty:2', 'Qty:2']}
+              content={['Qty:3', 'Qty:4', 'Qty:5']}
             />
           </div>
         </div>
