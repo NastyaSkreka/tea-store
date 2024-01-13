@@ -8,7 +8,7 @@ export const SimilarProductsContainer = styled.div`
 export const Title = styled.div`
   margin-bottom: 5px;
   font-weight: bold;
-  color: #008080; 
+  color: #008080;
 `;
 
 export const ProductContainer = styled.div`
@@ -29,7 +29,7 @@ export const ProductDetails = styled.div`
 
 export const ProductName = styled.div`
   margin-bottom: 1px;
-  font-size: 14px; 
+  font-size: 14px;
 `;
 
 export const RatingContainer = styled.div`
@@ -48,5 +48,5 @@ export const Select = styled.div`
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  background-color: #D9D9D9; 
+  background-color: #d9d9d9;
 `;

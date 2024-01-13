@@ -3,17 +3,16 @@ import mockup from '@/public/image/mockup.png';
 import StarIcon from '@/public/start-icon';
 import FavHeart from '@/public/favheart-icon';
 import {
-    TeaShopCard, 
-    FavHeartContainer,
-    StyledImage,
-    RatingContainer,
-    TeaShopTitle,
-    ReviewsCount,
-    Distance
+  TeaShopCard,
+  FavHeartContainer,
+  StyledImage,
+  RatingContainer,
+  TeaShopTitle,
+  ReviewsCount,
+  Distance,
+} from './styles';
 
-} from './styles'
- 
-export default function TeaShopItem({  name }: any) {
+export default function TeaShopItem({ name }: any) {
   return (
     <TeaShopCard>
       <FavHeartContainer>

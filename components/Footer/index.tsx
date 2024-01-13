@@ -4,6 +4,7 @@ import Heart from '@/public/heart-icon';
 import Favorites from '@/public/fav-icon';
 import User from '@/public/user-icon';
 import './index.css';
+import Button from '../ui/Button';
 
 interface IProps {
   variant?: 'nav' | 'btn-full' | 'btn-border';
@@ -35,13 +36,9 @@ const checkVariant = (
         </div>
       );
     case 'btn-full':
-      return <button className="button-full bg-teaGreen ">Add to chart</button>;
+      return <Button color="green" label="Add to cart" />;
     case 'btn-border':
-      return (
-        <button className="button-border border-teaGreen  text-teaGreen">
-          Log in
-        </button>
-      );
+      return <Button color="white" label="Log in" />;
     default:
       return null;
   }

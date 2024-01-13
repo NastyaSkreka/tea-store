@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <div className='container'>
+        <div className="container">
           <MainWrapper>
             <Image src={phone} alt="Phone" />
             <ReduxProvider>
@@ -30,5 +30,3 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     </html>
   );
 }
-
-

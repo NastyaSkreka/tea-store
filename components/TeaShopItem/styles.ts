@@ -18,7 +18,7 @@ export const FavHeartContainer = styled.div`
   top: 0;
   border-radius: 50%;
   border: 2px solid white;
-  background-color: #D3D3D3; 
+  background-color: #d3d3d3;
   padding: 2px;
 `;
 
@@ -26,8 +26,8 @@ export const StyledImage = styled(Image)`
   margin-bottom: 2px;
   width: 100%;
   overflow: hidden;
-  object-fit: cover; 
-  border-radius: 8px; 
+  object-fit: cover;
+  border-radius: 8px;
 `;
 
 export const TeaShopTitle = styled.div`
@@ -40,20 +40,20 @@ export const RatingContainer = styled.div`
   display: flex;
   align-items: center;
   margin-top: 2px;
-  font-size: 14px; 
+  font-size: 14px;
   font-weight: bold;
-  color: #003B40;
+  color: #003b40;
 `;
 
 export const ReviewsCount = styled.span`
-  font-size: 14px; 
+  font-size: 14px;
   font-weight: bold;
-  color: #B7C1C2;  
+  color: #b7c1c2;
   margin-left: 5px;
 `;
 
 export const Distance = styled.span`
   font-size: 12px;
   font-weight: bold;
-  color: #003B40; 
+  color: #003b40;
 `;

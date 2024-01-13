@@ -6,9 +6,8 @@ interface IProps {
 }
 export default function MainWrapper({ children }: IProps) {
   return (
-    <div className='main-wrapper relative bg-cover bg-center bg-no-repeat'>
+    <div className="main-wrapper relative bg-cover bg-center bg-no-repeat">
       {children}
     </div>
   );
 }
-

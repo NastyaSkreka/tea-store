@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-export const StyledSection = styled.section`
-
-`;
+export const StyledSection = styled.section``;
 
 export const StyledImage = styled(Image)`
   position: absolute;
@@ -16,8 +14,8 @@ export const StyledImage = styled(Image)`
 `;
 
 export const ContentWrapper = styled.div`
-  margin-top: 250px; 
-  padding-top: 20px; 
+  margin-top: 250px;
+  padding-top: 20px;
 `;
 
 export const DetailsContainer = styled.div`
@@ -54,9 +52,9 @@ export const DurationContainer = styled.div`
 `;
 
 export const DurationValue = styled.div`
-    font-size: 14px;
-    font-weight: 600;
-`
+  font-size: 14px;
+  font-weight: 600;
+`;
 
 export const QuantityContainer = styled.div`
   display: flex;
@@ -65,14 +63,14 @@ export const QuantityContainer = styled.div`
 `;
 
 export const QuantityValue = styled.div`
-    font-size: 20px;
-    font-weight: 700;
-`
+  font-size: 20px;
+  font-weight: 700;
+`;
 
 export const DescriptionContainer = styled.div`
   margin-bottom: 5px;
   font-weight: 700;
-  color: #008080; 
+  color: #008080;
 `;
 
 export const DescriptionText = styled.div`

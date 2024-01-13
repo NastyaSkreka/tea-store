@@ -1,13 +1,6 @@
 import React from 'react';
-import {
-  Section,
-  Title,
-  SearchContainer,
-  Input,
-  FilterButton,
-} from './styles';
-import FilterIcon  from '@/public/filter-icon';
-
+import { Section, Title, SearchContainer, Input, FilterButton } from './styles';
+import FilterIcon from '@/public/filter-icon';
 
 const TeaSearch = () => {
   return (
@@ -18,7 +11,7 @@ const TeaSearch = () => {
           <Input type="text" placeholder="Search" />
         </div>
         <FilterButton>
-         <FilterIcon/>
+          <FilterIcon />
         </FilterButton>
       </SearchContainer>
     </Section>
@@ -26,4 +19,3 @@ const TeaSearch = () => {
 };
 
 export default TeaSearch;
-
