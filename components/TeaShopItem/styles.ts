@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 
 export const TeaShopCard = styled.div`
   position: relative;
@@ -13,22 +14,20 @@ export const TeaShopCard = styled.div`
 
 export const FavHeartContainer = styled.div`
   position: absolute;
-  right: 15px;
-  top: -1px;
+  right: 0;
+  top: 0;
   border-radius: 50%;
   border: 2px solid white;
   background-color: #D3D3D3; 
   padding: 2px;
 `;
 
-export const StyledImage = styled.img`
+export const StyledImage = styled(Image)`
   margin-bottom: 2px;
   width: 100%;
-  max-height: 164px;
   overflow: hidden;
   object-fit: cover; 
   border-radius: 8px; 
-  border: 2px solid #008080; 
 `;
 
 export const TeaShopTitle = styled.div`

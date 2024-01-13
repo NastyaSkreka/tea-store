@@ -12,7 +12,6 @@ import {
     Distance
 
 } from './styles'
-import Image from 'next/image';
  
 export default function TeaShopItem({  name }: any) {
   return (
@@ -20,7 +19,7 @@ export default function TeaShopItem({  name }: any) {
       <FavHeartContainer>
         <FavHeart />
       </FavHeartContainer>
-      <Image src={mockup} width={153} height={164} alt="tea" />
+      <StyledImage src={mockup} width={153} height={164} alt="tea" />
       <TeaShopTitle>{name}</TeaShopTitle>
       <RatingContainer>
         <StarIcon />
