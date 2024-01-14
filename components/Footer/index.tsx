@@ -9,11 +9,14 @@ import Button from '../ui/Button';
 interface IProps {
   variant?: 'nav' | 'btn-full' | 'btn-border';
   path?: string;
+  label?: string;
+
 }
 
 const checkVariant = (
   variant?: 'nav' | 'btn-full' | 'btn-border',
   path?: string,
+  label?: string
 ) => {
   switch (variant) {
     case 'nav':
@@ -36,14 +39,14 @@ const checkVariant = (
         </div>
       );
     case 'btn-full':
-      return <Button color="green" label="Add to cart" />;
+      return <Button color="green" label={label || 'Add to cart'} />;
     case 'btn-border':
-      return <Button color="white" label="Log in" />;
+      return <Button color="white" label={label || 'Log in'}  />;
     default:
       return null;
   }
 };
 
-export default function Footer({ variant, path }: IProps) {
-  return <footer>{checkVariant(variant, path)}</footer>;
+export default function Footer({ variant, path, label }: IProps) {
+  return <footer>{checkVariant(variant, path, label )}</footer>;
 }
