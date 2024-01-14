@@ -15,18 +15,30 @@
   left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
+  border-radius: 50px;
 }
 
-.main-wrapper main {
+.main-wrapper .main--wrapper--main {
   border-radius: 60px;
   padding: 30px;
   width: 100%;
   height: 600px;
   object-fit: cover;
-  background: #ffff;
+  background: #fff;
   overflow: scroll;
   margin: 20px 0;
 }
+
+.main-wrapper .main--wrapper--secondary {
+    border-radius: 60px;
+    padding: 30px;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    background: #00575F;
+    overflow: scroll;
+    margin: 20px 0;
+  }
 
 .main-wrapper main::-webkit-scrollbar {
   width: 0.5em;

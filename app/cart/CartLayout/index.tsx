@@ -8,10 +8,10 @@ interface IProps {
 }
 export default function CartLayout({ children, path }: IProps) {
   return (
-    <>
+    <div className='main--wrapper--main'>
       <Header variant="with-arr-path" path={path} />
       {children}
       <Footer variant="nav" />
-    </>
+    </div>
   );
 }

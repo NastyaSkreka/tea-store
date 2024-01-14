@@ -1,5 +1,13 @@
 import React from 'react';
 
 export default function Explore() {
-  return <div>Explore page</div>;
+  return(
+    <div className='main--wrapper--secondary'>
+        <section>
+           hi 
+        </section>
+    </div>
+  )
 }
+
+

@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <MainWrapper>
             <Image src={phone} alt="Phone" />
             <ReduxProvider>
-              <main>{children}</main>
+              {children}
             </ReduxProvider>
           </MainWrapper>
         </div>

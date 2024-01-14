@@ -33,9 +33,9 @@ export default function CartItem() {
           <div className="mb-2 text-center font-bold text-teaBlue">
             free delivery
           </div>
-          <div className="mb-3 flex gap-1">
-            <button className="rounded-md bg-teaGrayLight px-[2px] text-sm font-bold">
-              save for later
+          <div className="mb-3 flex justify-between">
+            <button className="rounded-md bg-teaGrayLight px-[2px] text-sm font-bold ">
+              save 
             </button>
             <button className="rounded-md bg-teaGrayLight px-[2px] text-sm font-bold">
               remove
