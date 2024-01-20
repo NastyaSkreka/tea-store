@@ -1,6 +1,12 @@
 import React from 'react';
-import TeaShopItem from '@/components/TeaShopItem';
 import { useGetTeasQuery } from '@/lib/services/teaService';
+import TeaShopItem from '@/components/HomePage/TeaShopItem';
+import {
+    FeaturedTeaSection, 
+    FeaturedTeaTitle,
+    TeaShopListContainer, 
+} from './styles'
+
 
 export default function TeaFeatured() {
   const { data, error, isLoading } = useGetTeasQuery('');
@@ -10,15 +16,14 @@ export default function TeaFeatured() {
   }
 
   return (
-    <section className="mt-5">
-      <div className="text-md font-semibold text-teaBlue">
-        Featured tea shops
-      </div>
-      <div className="-mx-4 mt-5 flex flex-wrap overflow-hidden">
-        {data && data.map((teaShop: any) => (
-          <TeaShopItem key={teaShop.id} {...teaShop} />
-        ))}
-      </div>
-    </section>
+    <FeaturedTeaSection>
+      <FeaturedTeaTitle>Featured tea shops</FeaturedTeaTitle>
+      <TeaShopListContainer>
+        {data &&
+          data.map((teaShop: any) => (
+            <TeaShopItem key={teaShop.id} {...teaShop} />
+          ))}
+      </TeaShopListContainer>
+    </FeaturedTeaSection>
   );
 }
