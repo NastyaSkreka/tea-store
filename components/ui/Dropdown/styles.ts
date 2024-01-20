@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+interface DropdownListProps {
+    isOpen?: boolean;
+    width?: string; 
+  }
+
 export const DropdownContainer = styled.div`
   position: relative;
   z-index: 105;
@@ -21,15 +26,17 @@ export const DropdownText = styled.div`
     font-weight: 700;
 `
 
-export const DropdownList = styled.div<{ isOpen?: boolean; }>`
+export const DropdownList = styled.div<DropdownListProps>`
   position: absolute;
   left: 0;
   top: 100%;
+  width: ${({ width }) => (width ? width : '100%')};
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   border: 2px solid #007a7c;
   background-color: #fff;
   border-radius: 5px;
 `;
+
 
 export const DropdownItem = styled.li<{selected? : boolean;}>`
   padding: 8px 12px;

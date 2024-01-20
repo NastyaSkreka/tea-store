@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { useGetTeasQuery } from '@/lib/services/teaService';
 import TeaShopItem from '@/components/HomePage/TeaShopItem';
@@ -20,8 +21,8 @@ export default function TeaFeatured() {
       <FeaturedTeaTitle>Featured tea shops</FeaturedTeaTitle>
       <TeaShopListContainer>
         {data &&
-          data.map((teaShop: any) => (
-            <TeaShopItem key={teaShop.id} {...teaShop} />
+          data.map((teaShop: any, index: number) => (
+            <TeaShopItem key={index} {...teaShop} />
           ))}
       </TeaShopListContainer>
     </FeaturedTeaSection>

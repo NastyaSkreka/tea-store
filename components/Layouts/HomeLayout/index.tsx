@@ -1,3 +1,5 @@
+"use client"
+
 import Header from '@/components/Header';
 import { ReactNode } from 'react';
 import NavFooter from '@/components/NavFooter';

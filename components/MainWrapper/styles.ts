@@ -15,7 +15,6 @@ export const Wrapper = styled.div`
     height: 97%;
     width: 100%;
     position: absolute;
-    z-index: 2;
     top: 0;
     left: 50%;
     transform: translateX(-50%);

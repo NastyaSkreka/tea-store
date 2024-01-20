@@ -1,3 +1,6 @@
+"use client"
+
+// TODO: add Header in future 
 import Header from '@/components/Header';
 import { ReactNode } from 'react';
 
