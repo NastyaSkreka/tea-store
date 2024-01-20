@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import Image from 'next/image';
 import phone from '@/public/image/phone.png';
 import { ReduxProvider } from '@/lib/provider';
 import './globals.css';
 import MainWrapper from '@/components/MainWrapper';
 import { ReactNode } from 'react';
+import LayoutWrapper from '@/components/ui/layout-wrapper';
 
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -22,16 +21,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="relative flex h-screen items-center justify-center">
-          <MainWrapper>
-            <Image src={phone} alt="Phone" />
-            <ReduxProvider>
-              <main>
-                {children}
-              </main>
-            </ReduxProvider>
-          </MainWrapper>
-        </div>
+        <LayoutWrapper>
+            <MainWrapper>
+                <Image className='layout-bg' src={phone} alt="Phone" />
+                <ReduxProvider>
+                    <main className='main-layout'>
+                    {children}
+                    </main>
+                </ReduxProvider>
+            </MainWrapper>
+        </LayoutWrapper>
       </body>
     </html>
   );
