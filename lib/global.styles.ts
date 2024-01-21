@@ -1,4 +1,15 @@
 import styled from 'styled-components';
+import Image from 'next/image';
+
+export const PhoneTemplate = styled(Image)`
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+`
 
 export const LayoutMainWrapper = styled.div`
     position: relative;
@@ -19,35 +30,26 @@ export const MainWrapper = styled.div`
     background-position: center;
     background-repeat: no-repeat;
 
-    & .layout-bg {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        overflow: hidden;
-    }
+`;
 
-    & .main-layout {
-        border-radius: 60px;
-        padding: 30px;
-        width: 100%;
-        height: 600px;
-        object-fit: cover;
-        background: #ffff;
-        overflow: scroll;
-        margin: 20px 0;
-    }
+export const MainStyled = styled.main`
+    border-radius: 60px;
+    padding: 25px;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    background: #ffff;
+    overflow: scroll;
+    margin: 20px 0;
 
-    & .main-layout::-webkit-scrollbar {
+    & ::-webkit-scrollbar {
         width: 0.5em;
     }
 
-    & .main-layout::-webkit-scrollbar-thumb {
+    & ::-webkit-scrollbar-thumb {
         background-color: transparent;
     }
-`;
+`
 
 const MainImage = styled.img`
   height: 97%;
