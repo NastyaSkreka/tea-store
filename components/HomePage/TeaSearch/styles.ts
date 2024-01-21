@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 
 export const TeaShopSection = styled.section`
-  margin-top: 5px;
+  margin-top: 50px;
 `;
 
 export const Title = styled.div`

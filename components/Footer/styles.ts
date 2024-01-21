@@ -32,3 +32,6 @@ export const NavItemActive  = styled.div`
 export const NavItem= styled.div`
     margin: 0 3px;
 `
+export const FooterContainer = styled.footer`
+    margin-top: 23px;
+`
