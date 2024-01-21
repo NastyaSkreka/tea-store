@@ -37,18 +37,17 @@ export const ProductDetailsContainer = styled.div`
 export const ProductHeader = styled.div`
     display: flex;
     gap: 5px;
+    margin-bottom: 10px;
 `
 
 export const ProductTitle = styled.div`
   font-size: 14px;
-  margin-bottom: 5px;
-  text-align: center;
+
 `;
 
 export const RatingContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
 `;
 
 export const RatingValue = styled.div`
@@ -60,7 +59,7 @@ export const RatingValue = styled.div`
 export const DiscountContainer = styled.div`
   display: flex;
   gap: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 `;
 
 export const OriginalPrice = styled.div`
@@ -77,6 +76,7 @@ export const FinalPrice = styled.div`
 export const DiscountText = styled.div`
   font-weight: semibold;
   font-size: 14px;
+  margin-left: 10px;
   color: #007a7c;
 `;
 
@@ -101,6 +101,7 @@ export const SaveButton = styled.button`
   font-size: 12px;
   font-weight: bold;
   color: #fff;
+  cursor: pointer;
 `;
 
 export const RemoveButton = styled.button`
@@ -111,6 +112,7 @@ export const RemoveButton = styled.button`
   font-size: 12px;
   font-weight: bold;
   color: #fff;
+  cursor: pointer;
 `;
 
 export const BuyNowButton = styled.button`
@@ -123,6 +125,7 @@ export const BuyNowButton = styled.button`
   font-size: 12px;
   font-weight: bold;
   color: #fff;
+  cursor: pointer;
 `;
 
 
