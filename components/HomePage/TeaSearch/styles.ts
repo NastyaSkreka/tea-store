@@ -7,7 +7,7 @@ export const TeaShopSection = styled.section`
 `;
 
 export const Title = styled.div`
-  max-width: 400px;
+  max-width: 250px;
   font-size: 25px;
   line-height: 30px;
   font-weight: 600;

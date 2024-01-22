@@ -33,17 +33,21 @@ export const MainWrapper = styled.div`
 `;
 
 export const MainStyled = styled.main`
-    border-radius: 60px;
-    padding: 25px;
-    width: 100%;
+    border-radius: 38px;
+    padding: 5px;
+    width: 90%;
     height: 600px;
     object-fit: cover;
     background: #ffff;
-    overflow: scroll;
+    overflow: hidden;
     margin: 20px 0;
+    z-index: 5;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 
     & ::-webkit-scrollbar {
-        width: 0.5em;
+        width: 5px;
     }
 
     & ::-webkit-scrollbar-thumb {

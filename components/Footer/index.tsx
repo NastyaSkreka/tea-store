@@ -1,4 +1,5 @@
-import React from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
 
 import Home from '@/public/home-icon';
 import Heart from '@/public/heart-icon';
@@ -13,46 +14,77 @@ import {
     
 } from './styles'
 import Button from '../ui/Button';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+
+
 
 interface IProps  {
   variant?: 'nav' | 'btn-full' | 'btn-border';
 }
 
-const checkVariant = (variant?: 'nav' | 'btn-full' | 'btn-border') => {
-  switch (variant) {
-    case 'nav':
-      return  <FooterNav>
-      <IconsContainer>
-        <NavItemActive>
-          <Home />
-        </NavItemActive>
-        <NavItem>
-          <Heart />
-        </NavItem>
-        <NavItem>
-          <Favorites />
-        </NavItem>
-        <NavItem>
-          <User />
-        </NavItem>
-      </IconsContainer>
-    </FooterNav>
+const navLinks = [
+    {id: 1, icon: <Home/>, path: '/'}, 
+    {id: 2, icon: <Heart/>, path: '/heart'}, 
+    {id: 3, icon: <Favorites/>, path: '/cart'}, 
+    {id: 4, icon: <User />, path: '/user'}, 
+]
 
-    case 'btn-full':
-      return <Button color="green" label="Add to chart" />
+// u can't use hooks inside a normal function it must be a jsx component
+
+// maybe i need make separate componentn and inport it in this componentn
+// i will tell u how to make it and how it goes in nextjs
+
+// const checkVariant = (variant?: 'nav' | 'btn-full' | 'btn-border') => {
+//     // const { pathname } = useRouter();
+//     const pathname = usePathname();
+
+//   switch (variant) {
+//     case 'nav':
+//       return  <FooterNav>
+//          <IconsContainer>
+//          {navigation.map(({ id, icon, path }) => (
+//                 <Link key={id} href={path} passHref>
+//                 <NavItem className={pathname === path ? 'active' : ''}>
+//                     {icon}
+//                 </NavItem>
+//                 </Link>
+//             ))}
+//     </IconsContainer>
+//     </FooterNav>
+
+//     case 'btn-full':
+//       return <Button color="green" label="Add to chart" />
           
-    case 'btn-border':
-      return <Button color="white" label="Explore" />
-    default:
-      return null
-  }
+//     case 'btn-border':
+//       return <Button color="white" label="Explore" />
+//     default:
+//       return null
+//   }
+// }
+
+const NavLinkItem = () => {
+
 }
 
+
 export default function Footer({variant}: IProps) {
+const pathname = usePathname();
 
   return (
-    <FooterContainer>
-      { checkVariant(variant) }
+      <FooterContainer>
+        <FooterNav>
+    <IconsContainer>
+      {navLinks.map((navLink) => (
+        <Link key={navLink.id} href={navLink.path} passHref>
+            <NavItem className={pathname === navLink.path ? 'active' : ''}>
+                {navLink.icon}
+            </NavItem>
+        </Link>
+      ))}
+
+    </IconsContainer>
+    </FooterNav>
     </FooterContainer>
   );
 }

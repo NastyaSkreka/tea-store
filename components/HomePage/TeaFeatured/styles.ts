@@ -14,7 +14,6 @@ export const TeaShopListContainer = styled.div`
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
   margin-right: -4px;
   margin-left: -4px;
 `;

@@ -6,18 +6,17 @@ export const StyledSection = styled.section`
 `;
 
 export const StyledImage = styled(Image)`
-  position: absolute;
-  top: 17px;
-  left: 19px;
-  width: 312px;
-  height: 287px;
-  border-radius: 20px;
-  object-fit: contain;
+    position: absolute;
+    top: -7px;
+    left: 0px;
+    width: 320px;
+    height: 288px;
+    object-fit: contain;
 `;
 
 export const ContentWrapper = styled.div`
-margin-top: 250px; 
-padding-top: 20px; 
+    margin-top: 270px; 
+    padding-top: 20px; 
 `;
 
 export const DetailsContainer = styled.div`

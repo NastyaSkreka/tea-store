@@ -8,6 +8,6 @@ interface IButtonProps {
   label: string;
 }
 
-export default function Button({ color, label }: IButtonProps) {
-  return <StyledButton color={color}>{label}</StyledButton>;
+export default function Button({ color, label}: IButtonProps) {
+  return <StyledButton  color={color}>{label}</StyledButton>;
 }

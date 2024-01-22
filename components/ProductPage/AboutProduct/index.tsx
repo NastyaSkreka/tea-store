@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import product from '@/public/image/product.png';
 import Minus from '@/public/minus-icon';
