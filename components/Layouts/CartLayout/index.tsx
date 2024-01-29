@@ -13,7 +13,7 @@ export default function CartLayout({ children, path }: IProps) {
     <MainLayout>
     <Header variant='with-arr-path' path={path}/>
       { children }
-     <Footer variant='nav'/>
+     <Footer/>
     </MainLayout>
   )
 }

@@ -38,7 +38,7 @@ export const MainStyled = styled.main`
     width: 90%;
     height: 600px;
     object-fit: cover;
-    background: #ffff;
+    background: ${props => props.color || '#fff'}; 
     overflow: hidden;
     margin: 20px 0;
     z-index: 5;

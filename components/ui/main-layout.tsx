@@ -1,11 +1,16 @@
 'use client';
 
 import { MainStyled } from '@/lib/template.styles'
-import React, { PropsWithChildren } from 'react'
+import React  from 'react'
 
-function MainLayout({ children }: PropsWithChildren) {
+interface IProps{
+   children: React.ReactNode;
+   color?: string;
+}
+
+function MainLayout({ children, color = '#fff' }: IProps) {
   return (
-    <MainStyled>
+    <MainStyled color={color}>
         {children}
     </MainStyled>
   )
