@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { MainWrapper as MainWrapperContainer } from '@/lib/global.styles';
+import { MainWrapper as MainWrapperContainer } from '@/lib/template.styles';
 
 interface IProps {
   children?: ReactNode

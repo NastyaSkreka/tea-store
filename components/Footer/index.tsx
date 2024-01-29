@@ -30,10 +30,6 @@ const navLinks = [
     {id: 4, icon: <User />, path: '/user'}, 
 ]
 
-// u can't use hooks inside a normal function it must be a jsx component
-
-// maybe i need make separate componentn and inport it in this componentn
-// i will tell u how to make it and how it goes in nextjs
 
 // const checkVariant = (variant?: 'nav' | 'btn-full' | 'btn-border') => {
 //     // const { pathname } = useRouter();

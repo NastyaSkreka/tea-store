@@ -91,20 +91,3 @@ const ScrollbarStyle = styled.main`
   }
 `;
 
-// Usage
-// const YourComponent = () => (
-//   <MainWrapper>
-//     <MainImage src="your-image-source.jpg" alt="Your Image" />
-//     <MainContent className="main--wrapper--main">
-//       {/* Your content goes here */}
-//     </MainContent>
-//     <SecondaryContent className="main--wrapper--secondary">
-//       {/* Your secondary content goes here */}
-//     </SecondaryContent>
-//     <ScrollbarStyle>
-//       <main>
-//         {/* Your main content with custom scrollbar goes here */}
-//       </main>
-//     </ScrollbarStyle>
-//   </MainWrapper>
-// );
