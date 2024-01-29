@@ -14,7 +14,6 @@ export default function HomeLayout({ children }: IProps){
     <MainLayout>
       <Header variant='full'/>
       { children }
-     <Footer variant='nav'/> 
     </MainLayout>
   )
 }
