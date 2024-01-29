@@ -18,17 +18,22 @@ import {
     SaveButton, 
     RemoveButton,
     BuyNowButton,
-    ProductHeader
+    ProductHeader, 
+    StyledButton
 } from './styles'
 import Dropdown from '@/components/ui/Dropdown';
 import StarIcon from '@/public/start-icon';
 
+
+
 export default function CartItem() {
   return (
+    <>
+    <StyledButton>Proceed to pay</StyledButton>
     <ProductContainer>
         <ProductRow>
             <ProductImageContainer>
-                <ProductImage src={cart} alt="cart" />
+                <ProductImage width={100} height={115} src={cart} alt="cart" />
                 <Dropdown 
                     label="Qty:2"
                     content={[
@@ -60,5 +65,6 @@ export default function CartItem() {
             </ProductDetailsContainer>
         </ProductRow>
     </ProductContainer>
+    </>
   )
 }

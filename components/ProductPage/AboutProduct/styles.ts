@@ -7,11 +7,12 @@ export const StyledSection = styled.section`
 
 export const StyledImage = styled(Image)`
     position: absolute;
-    top: -7px;
+    top: 52%;
     left: 0px;
-    width: 320px;
-    height: 288px;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    transform: translateY(-80%);
 `;
 
 export const ContentWrapper = styled.div`
@@ -20,7 +21,7 @@ export const ContentWrapper = styled.div`
 `;
 
 export const DetailsContainer = styled.div`
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
 `;
@@ -32,7 +33,8 @@ export const InfoContainer = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: 14px;
+  font-size: 18px;
+  margin-bottom: 10px;
 `;
 
 export const RatingContainer = styled.div`
@@ -77,5 +79,6 @@ export const DescriptionContainer = styled.div`
 export const DescriptionText = styled.div`
   width: 100%;
   font-size: 14px;
+  line-height: 20px;
 `;
 

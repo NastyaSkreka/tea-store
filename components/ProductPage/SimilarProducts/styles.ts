@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 export const SimilarProductsContainer = styled.div`
-  margin-top: 3px;
+  margin-top: 15px;
 `;
 
 export const Title = styled.div`

@@ -12,7 +12,7 @@ export const FooterNav = styled.div`
     justify-content: center;
     border-bottom-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
-    background-color: #fff;
+    background-color: #FAF8F8;
     padding: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;

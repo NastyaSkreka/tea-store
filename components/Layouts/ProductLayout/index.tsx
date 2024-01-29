@@ -1,7 +1,6 @@
 "use client"
-
-import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import Button from '@/components/ui/Button';
 import MainLayout from '@/components/ui/main-layout';
 import { ReactNode } from 'react';
 
@@ -13,7 +12,7 @@ export default function ProductLayout({ children }: IProps){
     <MainLayout>
      <Header variant='full' path="product"/> 
       { children }
-      <Footer variant='btn-full'/>
+      <Button color="green" label='Add to chart'/>
     </MainLayout>
   )
 }

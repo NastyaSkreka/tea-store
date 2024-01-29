@@ -8,6 +8,7 @@ export const HeaderContainer = styled.header`
 export const ArrLeftContainer = styled.div`
   display: flex;
   justify-content: start;
+  align-items: center;
 `;
 
 export const PathText = styled.p`

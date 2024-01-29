@@ -1,6 +1,20 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
+export const StyledButton = styled.button`
+    margin: 10px 0;
+    background-color: #00575F;
+    color: #fff;
+    width: 100%;
+    height: 35px;
+    border-radius: 12.5px;
+    font-weight: bold;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+`
+
 export const ProductContainer = styled.div`
   margin-top: 10px;
   background-color: #f4f4f4;
@@ -19,8 +33,8 @@ export const ProductImageContainer = styled.div`
 `;
 
 export const ProductImage = styled(Image)`
-  width: 120px;
-  height: 125px;
+   width: 100%;
+   object-fit: contain;
 `;
 
 export const QuantityContainer = styled.div`
@@ -81,7 +95,7 @@ export const DiscountText = styled.div`
 `;
 
 export const FreeDelivery = styled.div`
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 14px;
   font-weight: bold;
   color: #007a7c;
