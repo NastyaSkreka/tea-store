@@ -19,7 +19,7 @@ export default function TeaShopItem({ name }: any) {
         <FavHeartContainer>
             <FavHeart />
         </FavHeartContainer>
-        <Image src={mockup} alt="tea" />
+        <Image width={153} height={168} src={mockup} alt="tea" />
         <TeaShopName>{name}</TeaShopName>
         <RatingContainer>
         <StarIcon />

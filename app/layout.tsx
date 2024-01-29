@@ -4,6 +4,10 @@ import { ReactNode } from 'react';
 import LayoutWrapper from '@/components/ui/layout-wrapper';
 import PhoneWrapper from '@/components/ui/template-wrapper';
 import { GlobalStyle} from '../lib/globals'
+import { Raleway } from 'next/font/google'
+
+
+const raleway = Raleway({ subsets: ['latin'] })
 
 
 export default function RootLayout({
@@ -13,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={raleway.className}>
         <LayoutWrapper>
             <GlobalStyle/>
             <MainWrapper>

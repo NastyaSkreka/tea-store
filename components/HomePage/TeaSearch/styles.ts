@@ -24,7 +24,7 @@ export const SearchContainer = styled.div`
 export const SearchInput = styled.input`
   border-radius: 10px;
   background-color: #EDF0EF;
-  padding: 5px 10px;
+  padding: 10px;
   outline: none;
 `;
 

@@ -2,18 +2,13 @@ import styled from 'styled-components';
 
 export const TeaShopCard = styled.div`
   position: relative;
-  margin-bottom: 16px; 
-  width: 100%;
-  padding: 0 16px; 
-  
-  @media (min-width: 768px) {
-    width: 50%;
-  }
+  margin-bottom: 10px; 
+  padding: 0 3px; 
 `;
 
 export const FavHeartContainer = styled.div`
   position: absolute;
-  right: 15px;
+  right: 5px;
   top: 0px;
   border-radius: 50%;
   border: 2px solid white;
@@ -24,7 +19,6 @@ export const FavHeartContainer = styled.div`
 export const Image = styled.img`
   margin-bottom: 8px; 
   width: 100%;
-  height: 164px; 
   object-fit: cover;
 `;
 
