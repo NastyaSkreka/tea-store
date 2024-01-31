@@ -1,5 +1,5 @@
-import React from "react";
-import {StyledForm } from './styles'
+import React, { useState } from "react";
+import {StyledForm, FormSwitcher, SwitchButton, Spacer} from './styles'
 
 
 interface IProps {
@@ -7,6 +7,11 @@ interface IProps {
   }
 
 const AnimatedForm = ({ isOpen }: IProps) => {
+    const [activeForm, setActiveForm] = useState("login");
+
+  const handleSwitchForm = (formType: string) => {
+    setActiveForm(formType);
+  };
  
   return (
     <StyledForm
@@ -14,9 +19,22 @@ const AnimatedForm = ({ isOpen }: IProps) => {
       animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? "0%" : "100%" }}
       transition={{ duration: 0.3 }}
     >
-      <form>
-       Form Content
-      </form>
+    <FormSwitcher>
+        <SwitchButton
+          onClick={() => handleSwitchForm("login")}
+          isActive={activeForm === "login"} 
+        >
+          Login
+        </SwitchButton>
+        <Spacer/>
+        <SwitchButton
+          onClick={() => handleSwitchForm("signup")}
+          isActive={activeForm === "signup"} 
+        >
+          Signup
+        </SwitchButton>
+      </FormSwitcher>
+      {activeForm === "login" ? "login" : "signup"}
     </StyledForm>
   );
 };
