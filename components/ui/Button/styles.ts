@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-
-
 export const StyledButton = styled.button`
   position: absolute;
   background-color: ${(props) => (props.color === 'green' ? 'teal' : 'white')};
