@@ -9,7 +9,7 @@ export const CheckboxContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 20px 0;
+  margin: 30px 0;
 `;
 
 export const StyledCheckbox = styled.input`
