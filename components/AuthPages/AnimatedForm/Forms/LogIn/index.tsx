@@ -1,5 +1,13 @@
 import GoogleIcon from '@/public/google-icon';
-import {FormContainer,Input, LogInButton,Container,Line, Text, SocialContainer } from './style'
+import {FormContainer,
+        Input, 
+        Button,
+        ContinueContainer,
+        Line, 
+        ContinueText, 
+        SocialContainer,
+        FormLabel,
+        FormLink} from '../style'
 import FacebookIcon from '@/public/facebook-icon';
 import InstagramIcon from '@/public/instagram-icon';
 
@@ -7,17 +15,17 @@ import InstagramIcon from '@/public/instagram-icon';
 const LoginForm = () => {
     return (
       <FormContainer>
-        <div>Email</div>
+        <FormLabel>Email</FormLabel>
         <Input type="email"  />
-        <div>Password</div>
+        <FormLabel>Password</FormLabel>
         <Input type="password" />
-        <div>forgot password</div>
-        <LogInButton>Log in</LogInButton>
-        <Container>
+        <FormLink>forgot password</FormLink>
+        <Button>Log in</Button>
+        <ContinueContainer>
             <Line />
-            <Text>Or continue with</Text>
+            <ContinueText>Or continue with</ContinueText>
             <Line />
-        </Container>
+        </ContinueContainer>
         <SocialContainer>
             <GoogleIcon/>
             <FacebookIcon/>

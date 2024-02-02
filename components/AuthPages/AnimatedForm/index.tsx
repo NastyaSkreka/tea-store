@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import {StyledForm, FormSwitcher, SwitchButton, Spacer} from './styles'
-import LoginForm from "../LogIn";
 
+import SignUp from "./Forms/SignUp";
+import LoginForm from "./Forms/LogIn";
 
 interface IProps {
     isOpen: boolean;
@@ -35,7 +36,7 @@ const AnimatedForm = ({ isOpen }: IProps) => {
           Signup
         </SwitchButton>
       </FormSwitcher>
-      {activeForm === "login" ? <LoginForm/> : "signup"}
+      {activeForm === "login" ? <LoginForm/> : <SignUp/>}
     </StyledForm>
   );
 };
