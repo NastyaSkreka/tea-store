@@ -17,12 +17,12 @@ export const StyledForm = styled(motion.div)`
 export const FormSwitcher = styled.div`
     display: flex;
     justify-content: space-around;
-    margin: 20px 0 20px 0;
+    margin: 5px 0 ;
 `;
 
 export const SwitchButton = styled.button<{ isActive: boolean }>`
     cursor: pointer;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: ${({ isActive }) => (isActive ? "600" : "normal")};
 
 `;

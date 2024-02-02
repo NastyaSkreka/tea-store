@@ -1,17 +1,22 @@
 import styled from "styled-components";
 
 export const FormContainer = styled.div`
-    padding: 25px;
+    padding: 5px 25px;
     display: flex;
     flex-direction: column;
 `;
 
+export const  FieldContainer = styled.div`
+    margin: 10px 0;
+`
+
 export const Input = styled.input`
     border: none;
     border-bottom: 1px solid black; 
-    margin-bottom: 20px;
+    margin-bottom: 2px;
     padding: 5px;
     outline: none;
+    width: 100%;
 `;
 
 export const Button = styled.button`
@@ -19,7 +24,7 @@ export const Button = styled.button`
     color: ${(props) => (props.color === 'green' ? 'white' : 'teal')};
     width: 223px;
     height: 41px;
-    margin: 20px auto;
+    margin: 10px auto;
     border-radius: 20px;
     font-weight: bold;
     font-size: 16px;
@@ -31,6 +36,7 @@ export const Button = styled.button`
 export const ContinueContainer = styled.div`
     display: flex;
     align-items: center;
+    margin: 15px 0;
 `;
 
 export const Line = styled.div`
@@ -43,6 +49,12 @@ export const ContinueText = styled.div`
     margin: 0 10px;
 `;
 
+export const ErrorText = styled.p`
+    color: red;
+    font-size: 14px;
+    margin: 0;
+`;
+
 export const SocialContainer = styled.div`
     display: flex;
     align-items: center;
@@ -52,10 +64,11 @@ export const SocialContainer = styled.div`
 `
 
 export const FormLabel = styled.div`
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
 `
 
 export const FormLink = styled.div`
     cursor: pointer;
+    margin: 15px 0;
 `
