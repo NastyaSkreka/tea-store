@@ -1,6 +1,6 @@
 'use client';
 
-import TotalLayout from "@/components/Layouts/TotalLayout";
+import Layout from "@/components/Layout";
 import PaymentNavigate from "@/components/PaymentPage/PaymentNavigate";
 import GuaranteedCost from "@/components/TotalPage/GuaranteedCost";
 import PromoCode from "@/components/TotalPage/PromoCode";
@@ -12,12 +12,12 @@ export default function Product() {
     const pathname = usePathname().replace('/', ' ')
 
     return (
-        <TotalLayout path={pathname}>
+        <Layout path={pathname} headerVariant='with-arr-path'>
            <PaymentNavigate/>
            <TotalCost/>
            <PromoCode/>
            <GuaranteedCost/>
-        </TotalLayout>
+        </Layout>
       );
 }
 

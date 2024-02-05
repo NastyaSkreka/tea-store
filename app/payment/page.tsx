@@ -1,6 +1,7 @@
 'use client';
 
-import PaymentLayout from "@/components/Layouts/PaymentLayout";
+
+import Layout from "@/components/Layout";
 import PaymentNavigate from "@/components/PaymentPage/PaymentNavigate";
 import PaymentOptions from "@/components/PaymentPage/PaymentsOptions";
 import Button from "@/components/ui/Button";
@@ -10,10 +11,12 @@ export default function Payment() {
     const pathname = usePathname().replace('/', ' ')
 
     return (
-        <PaymentLayout path={pathname}>
+        <Layout path={pathname} 
+                headerVariant='with-arr-path' 
+                button={<Button color="green" label="Pay RS.30" position="absolute"/>}
+        >
             <PaymentNavigate/>
            <PaymentOptions/>
-           <Button color="green" label="Pay RS.30" position="absolute"/>
-        </PaymentLayout>
+        </Layout>
       );
 }
