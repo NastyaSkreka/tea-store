@@ -7,7 +7,6 @@ import CartItem from '@/components/CartPage/CartItem/CartItem';
 import PageLayout from '@/components/ui/pageLayout';
 import Footer from '@/components/ui/Footer';
 
-
 export default function Cart() {
   const pathname = usePathname().replace('/', ' ')
 
@@ -20,5 +19,6 @@ export default function Cart() {
         <DeliviredDropdown/>
         <CartItem/>
     </PageLayout>
+
   )
 }

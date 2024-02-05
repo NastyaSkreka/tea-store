@@ -16,6 +16,4 @@ export default function Product() {
           <AboutProduct/>
           <SimilarProducts/>
         </PageLayout>
-      );
-}
-
+    )}
