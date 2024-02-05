@@ -1,10 +1,10 @@
 import { ReduxProvider } from '@/lib/provider';
-import MainWrapper from '@/components/MainWrapper';
+import MainWrapper from '@/components/Main/MainWrapper';
 import { ReactNode } from 'react';
-import LayoutWrapper from '@/components/ui/layout-wrapper';
-import PhoneWrapper from '@/components/ui/template-wrapper';
+import LayoutWrapper from '@/components/ui/layoutWrapper';
 import { GlobalStyle} from '../lib/globals'
 import { Raleway } from 'next/font/google'
+import PhoneWrapper from '@/components/ui/PhoneWrapper';
 
 
 const raleway = Raleway({ subsets: ['latin'] })

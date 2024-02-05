@@ -1,15 +1,15 @@
 'use client'
 
 import React from 'react';
-import ExploreLayout from '@/components/Layouts/ExploreLayout';
 import Explore from '@/components/AuthPages/ExplorePage';
+import MainLayout from '@/components/ui/mainLayout';
 
-export default function Cart() {
+export default function ExplorePage() {
 
   return (
-    <ExploreLayout>
+    <MainLayout color="#106269">
         <Explore/>
-    </ExploreLayout>
+    </MainLayout>
   )
 }
 

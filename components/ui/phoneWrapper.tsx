@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import React, { PropsWithChildren } from 'react'
 import Image from 'next/image';
 import phone from '@/public/image/phone.png';
-import Footer from '../Footer';
 
 export const PhoneTemplate = styled(Image)`
     height: 100%;
