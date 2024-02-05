@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FilterICon from '@/public/filter-icon';
 import {
     TeaShopSection, 
@@ -9,13 +9,29 @@ import {
     FilterIconBackground,
 } from './styles';
 
-export default function TeaSearch() {
+interface TeaSearchProps {
+  onSearch: (searchTerm: string) => void;
+}
+
+export default function TeaSearch({onSearch}:TeaSearchProps) {
+
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setSearchTerm(event.target.value);
+      onSearch(event.target.value); 
+    }; 
+    
   return (
     <TeaShopSection>
       <Title>Find a tea shop anywhere</Title>
       <SearchContainer>
         <div>
-          <SearchInput type="text" placeholder="Search" />
+          <SearchInput  
+                type="text"
+                placeholder="Search"
+                value={searchTerm}
+                onChange={handleSearchChange}/>
         </div>
         <FilterIconContainer>
           <FilterIconBackground>
