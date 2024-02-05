@@ -12,6 +12,7 @@ import {
     ReviewCount, 
     Distance
 } from './styles'
+import Link from 'next/link';
 
 export default function TeaShopItem({ name }: any) {
   return (
@@ -19,7 +20,9 @@ export default function TeaShopItem({ name }: any) {
         <FavHeartContainer>
             <FavHeart />
         </FavHeartContainer>
-        <Image width={153} height={168} src={mockup} alt="tea" />
+        <Link href="/product">
+            <Image width={153} height={168} src={mockup} alt="tea" />
+        </Link>
         <TeaShopName>{name}</TeaShopName>
         <RatingContainer>
         <StarIcon />

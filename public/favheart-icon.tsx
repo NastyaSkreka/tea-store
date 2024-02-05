@@ -1,6 +1,14 @@
+import { useState } from "react";
+
 export default function FavHeart() {
+    const [isFav, setIsFav] = useState(false);
+
+    const handleClick = () => {
+      setIsFav(!isFav); 
+    };
+
   return (
-    <svg
+    <svg onClick={handleClick} style={{ fill: isFav ? '#003B40' : 'transparent' }}
       width="16"
       height="13"
       viewBox="0 0 18 16"

@@ -2,6 +2,7 @@ import React from 'react';
 import ArrLeft from '@/public/arr-left';
 import Image from 'next/image';
 import avatar from '@/public/image/avatar.png';
+
 import cart from '@/public/image/shop-cart.png'
 import {
     HeaderContainer,
@@ -9,6 +10,7 @@ import {
     PathText,
     FullVariantContainer
 } from './styles'
+import Link from 'next/link';
 
 interface IProps  {
   variant?: 'full' | 'with-arr-path' | 'with-arr';
@@ -19,22 +21,32 @@ const checkVariant = (variant?: 'full' | 'with-arr-path' | 'with-arr', path?: st
   switch (variant) {
     case 'full':
       return <FullVariantContainer>
-        <ArrLeft />
+        <Link href="/"  >
+            <ArrLeft />
+        </Link>
         {path === 'product' ? (
-            <Image src={cart} width={35} height={35} alt="cart" />
+            <Link href="/cart"  >
+                <Image src={cart} width={35} height={35} alt="cart" />
+            </Link>
           ) : (
-            <Image src={avatar} width={40} height={40} alt="avatar" />
+            <Link href="/user"  >
+                <Image src={avatar} width={40} height={40} alt="avatar" />
+            </Link>
         )}
       </FullVariantContainer>;
     case 'with-arr-path':
-      return <ArrLeftContainer >
-        <ArrLeft />
-        <PathText>{ path?.toUpperCase() }</PathText>
-      </ArrLeftContainer>;
+      return <Link href="/"  >
+        <ArrLeftContainer >
+                <ArrLeft />
+                <PathText>{ path?.toUpperCase() }</PathText>
+        </ArrLeftContainer>
+        </Link>
     case 'with-arr':
-      return <ArrLeftContainer>
-        <ArrLeft />
-      </ArrLeftContainer>;
+      return <Link href="/"  >
+        <ArrLeftContainer>  
+                 <ArrLeft />  
+        </ArrLeftContainer>;
+      </Link>
     default:
       return null
   }

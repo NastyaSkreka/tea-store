@@ -22,7 +22,7 @@ export default function TeaFeatured() {
       <TeaShopListContainer>
         {data &&
           data.map((teaShop: any, index: number) => (
-            <TeaShopItem key={index} {...teaShop} />
+                <TeaShopItem key={index} {...teaShop} />
           ))}
       </TeaShopListContainer>
     </FeaturedTeaSection>

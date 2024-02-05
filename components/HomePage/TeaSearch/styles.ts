@@ -31,6 +31,7 @@ export const SearchInput = styled.input`
 export const FilterIconContainer = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const FilterIconBackground = styled.div`
