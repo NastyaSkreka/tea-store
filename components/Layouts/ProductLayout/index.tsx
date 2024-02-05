@@ -12,7 +12,7 @@ export default function ProductLayout({ children }: IProps){
     <MainLayout>
      <Header variant='full' path="product"/> 
       { children }
-      <Button color="green" label='Add to chart'/>
+      <Button color="green" label='Add to chart' position="absolute"/>
     </MainLayout>
   )
 }

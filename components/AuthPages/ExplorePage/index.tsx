@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import {Container, Title, Description} from './styles'
 import { useState } from 'react';
 import AnimatedForm from '@/components/AuthPages/AnimatedForm';
-import { ExploreButton} from './styles'
+import Button from "@/components/ui/Button";
+
 
 export default function Explore() {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,13 +28,13 @@ export default function Explore() {
 
         <AnimatedForm isOpen={isOpen} />
       
-        <ExploreButton
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={toggleForm}
-        >
-            Explore
-        </ExploreButton>
+        <Button
+          color="white"
+          label="Explore"
+          position="absolute"
+          onClick={toggleForm}
+        />
+       
       </Container>
     )
 }

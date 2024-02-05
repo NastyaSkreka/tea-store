@@ -2,8 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import GoogleIcon from '@/public/google-icon';
 import {FormContainer,
-        Input, 
-        Button,
+        Input,  
         ContinueContainer,
         Line, 
         ContinueText, 
@@ -14,6 +13,7 @@ import {FormContainer,
         ErrorText} from '../style'
 import FacebookIcon from '@/public/facebook-icon';
 import InstagramIcon from '@/public/instagram-icon';
+import Button from '@/components/ui/Button';
 
 
 const LoginForm = () => {
@@ -46,7 +46,7 @@ const LoginForm = () => {
                     <ErrorMessage name="password" component={ErrorText}  />
                 </FieldContainer>
                 <FormLink>forgot password</FormLink>
-                <Button>Log in</Button>
+                <Button color="white" label='Log in'/>
                 <ContinueContainer>
                     <Line />
                     <ContinueText>Or continue with</ContinueText>

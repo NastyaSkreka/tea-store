@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { FormContainer, Input, Button, FormLabel, ErrorText , FieldContainer} from "../style";
+import { FormContainer, Input, FormLabel, ErrorText , FieldContainer} from "../style";
+import Button from '@/components/ui/Button';
 
 const SignUp = () => {
   return (
@@ -44,8 +45,7 @@ const SignUp = () => {
             <Field type="text" name="mobileNumber" as={Input} />
             <ErrorMessage name="mobileNumber" component={ErrorText} />
             </FieldContainer>
-
-            <Button type="submit">Register</Button>
+            <Button color="white" label="Register" position='absolute'/>
         </FormContainer>
         </Form>
       )}

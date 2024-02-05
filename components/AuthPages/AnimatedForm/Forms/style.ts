@@ -19,20 +19,7 @@ export const Input = styled.input`
     width: 100%;
 `;
 
-export const Button = styled.button`
-    background-color: ${(props) => (props.color === 'green' ? 'teal' : 'white')};
-    color: ${(props) => (props.color === 'green' ? 'white' : 'teal')};
-    width: 223px;
-    height: 41px;
-    margin: 10px auto;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #000;
-`
+
 export const ContinueContainer = styled.div`
     display: flex;
     align-items: center;

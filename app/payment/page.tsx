@@ -13,7 +13,7 @@ export default function Payment() {
         <PaymentLayout path={pathname}>
             <PaymentNavigate/>
            <PaymentOptions/>
-           <Button color="green" label="Pay RS.30"/>
+           <Button color="green" label="Pay RS.30" position="absolute"/>
         </PaymentLayout>
       );
 }
