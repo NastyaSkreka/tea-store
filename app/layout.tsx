@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import LayoutWrapper from '@/components/ui/layoutWrapper';
 import { GlobalStyle} from '../lib/globals'
 import { Raleway } from 'next/font/google'
-import PhoneWrapper from '@/components/ui/PhoneWrapper';
+import PhoneWrapper from '@/components/ui/phoneWrapper';
 
 
 const raleway = Raleway({ subsets: ['latin'] })

@@ -1,5 +1,4 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
 import GoogleIcon from '@/public/google-icon';
 import {FormContainer,
         Input,  
@@ -14,6 +13,7 @@ import {FormContainer,
 import FacebookIcon from '@/public/facebook-icon';
 import InstagramIcon from '@/public/instagram-icon';
 import Button from '@/components/ui/Button';
+import { signInSchema } from '@/schemas/authentication.schema';
 
 
 const LoginForm = () => {
@@ -24,10 +24,7 @@ const LoginForm = () => {
           email: '',
           password: '',
         }}
-        validationSchema={Yup.object().shape({
-          email: Yup.string().email('Invalid email').required('Email is required'),
-          password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
-        })}
+        validationSchema={signInSchema}
         onSubmit={(values) => {
           console.log(values);
         }}
