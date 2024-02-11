@@ -17,7 +17,7 @@ const navLinks = [
     {id: 1, icon: <Home/>, path: '/'}, 
     {id: 2, icon: <Heart fill="none" color="#B7C1C2"/>, path: '/favourites'}, 
     {id: 3, icon: <Favorites/>, path: '/cart'}, 
-    {id: 4, icon: <User />, path: '/user'}, 
+    {id: 4, icon: <User />, path: '/explore'}, 
 ]
 
 
