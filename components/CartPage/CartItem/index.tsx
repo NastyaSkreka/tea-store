@@ -23,6 +23,7 @@ import {
 } from './styles'
 import Dropdown from '@/components/ui/Dropdown';
 import StarIcon from '@/public/start-icon';
+import Link from 'next/link';
 
 
 
@@ -61,7 +62,9 @@ export default function CartItem() {
                     <SaveButton>Save</SaveButton>
                     <RemoveButton>Remove</RemoveButton>
                 </ActionButtonsContainer>
-                <BuyNowButton>Buy</BuyNowButton>
+                <Link href="/total">
+                   <BuyNowButton>Buy</BuyNowButton>
+                </Link>
             </ProductDetailsContainer>
         </ProductRow>
     </ProductContainer>
