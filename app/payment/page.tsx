@@ -13,6 +13,7 @@ export default function Payment() {
         <PageLayout 
             headerVariant='with-arr-path'
             path={pathname}
+            buttonLink="/cart"
             button={<Button color="green" label="Pay RS.30" position="absolute"/>}
         >
             <PaymentNavigate/>
