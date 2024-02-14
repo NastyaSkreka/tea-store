@@ -2,7 +2,7 @@ import React from 'react';
 import ArrLeft from '@/public/arr-left';
 import Image from 'next/image';
 import avatar from '@/public/image/avatar.png';
-import cart from '@/public/image/сart.png'
+import cart from '@/public/image/сart.png';
 
 interface IProps {
   variant?: 'full' | 'with-arr-path' | 'with-arr';
@@ -18,7 +18,11 @@ const checkVariant = (
       return (
         <div className="absolute z-10 flex w-full justify-between">
           <ArrLeft />
-          {path === 'product' ? <Image src={cart} width={35} height={35} alt="cart" /> : <Image src={avatar} width={40} height={40} alt="avatar" />}
+          {path === 'product' ? (
+            <Image src={cart} width={35} height={35} alt="cart" />
+          ) : (
+            <Image src={avatar} width={40} height={40} alt="avatar" />
+          )}
         </div>
       );
     case 'with-arr-path':
