@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-export const StyledButton = styled.button`
+interface IStyledButtonProps {
+    color: 'green' | 'white';
+    position?: string;
+  }
+
+export const StyledButton = styled.button<IStyledButtonProps>`
   background-color: ${(props) => (props.color === 'green' ? 'teal' : 'white')};
   color: ${(props) => (props.color === 'green' ? 'white' : 'teal')};
   border: ${(props) => (props.color === 'white' ? '1px solid #000' : 'teal')};
@@ -16,10 +21,10 @@ export const StyledButton = styled.button`
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 
     ${(props) => props.position === 'absolute' && `
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 500;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 500;
     `}
 `;
