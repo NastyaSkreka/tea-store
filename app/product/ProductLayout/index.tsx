@@ -7,10 +7,10 @@ interface IProps {
 }
 export default function ProductLayout({ children }: IProps) {
   return (
-    <>
+    <div className='main--wrapper--main'>
       <Header variant="full" path="product" />
       {children}
       <Footer variant="btn-full" />
-    </>
+    </div>
   );
 }

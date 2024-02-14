@@ -4,15 +4,19 @@ import Heart from '@/public/heart-icon';
 import Favorites from '@/public/fav-icon';
 import User from '@/public/user-icon';
 import './index.css';
+import Button from '../ui/Button';
 
 interface IProps {
   variant?: 'nav' | 'btn-full' | 'btn-border';
   path?: string;
+  label?: string;
+
 }
 
 const checkVariant = (
   variant?: 'nav' | 'btn-full' | 'btn-border',
   path?: string,
+  label?: string
 ) => {
   switch (variant) {
     case 'nav':
@@ -35,18 +39,14 @@ const checkVariant = (
         </div>
       );
     case 'btn-full':
-      return <button className="button-full bg-teaGreen ">Add to chart</button>;
+      return <Button color="green" label={label || 'Add to cart'} />;
     case 'btn-border':
-      return (
-        <button className="button-border border-teaGreen  text-teaGreen">
-          Log in
-        </button>
-      );
+      return <Button color="white" label={label || 'Log in'}  />;
     default:
       return null;
   }
 };
 
-export default function Footer({ variant, path }: IProps) {
-  return <footer>{checkVariant(variant, path)}</footer>;
+export default function Footer({ variant, path, label }: IProps) {
+  return <footer>{checkVariant(variant, path, label )}</footer>;
 }

@@ -1,43 +1,56 @@
-import Image from 'next/image';
+'use client';
 import React from 'react';
 import product from '@/public/image/product.png';
 import Minus from '@/public/minus-icon';
 import Plus from '@/public/plus-icon';
 import StarIcon from '@/public/start-icon';
 import Clock from '@/public/clock-icon';
-import './index.css';
+import {
+  StyledImage,
+  StyledSection,
+  ContentWrapper,
+  DetailsContainer,
+  Title,
+  RatingContainer,
+  DurationContainer,
+  DurationValue,
+  QuantityContainer,
+  QuantityValue,
+  InfoContainer,
+  DescriptionContainer,
+  DescriptionText,
+  RatingValue,
+} from './styles';
 
 export default function AboutProduct() {
   return (
-    <section>
-      <Image src={product} className="background-image" alt="product" />
-      <div className="mt-64 pt-2">
-        <div className="mb-3 flex justify-between">
-          <div className="space-y-1">
-            <div className="text-sm">Spiced Lemon Tea</div>
-            <div className="flex items-center">
-              <div className="mr-1 text-sm  font-semibold"> 48</div>
+    <StyledSection>
+      <StyledImage src={product} alt="product" />
+      <ContentWrapper>
+        <DetailsContainer>
+          <InfoContainer>
+            <Title>Spiced Lemon Tea</Title>
+            <RatingContainer>
+              <RatingValue>48</RatingValue>
               <StarIcon />
-            </div>
-            <div className="flex items-center gap-2">
+            </RatingContainer>
+            <DurationContainer>
               <Clock />
-              <div className="text-sm font-semibold"> 24 min</div>
-            </div>
-          </div>
-          <div className="flex gap-2">
+              <DurationValue>24 min</DurationValue>
+            </DurationContainer>
+          </InfoContainer>
+          <QuantityContainer>
             <Minus />
-            <div className="text-xl font-bold">2</div>
+            <QuantityValue>2</QuantityValue>
             <Plus />
-          </div>
-        </div>
-        <div>
-          <div className="mb-1 font-semibold text-teaBlue">Description</div>
-          <div className="w-full text-sm">
-            A conversation is never complete until you have a cup of chai
-            Friends visiting each others
-          </div>
-        </div>
-      </div>
-    </section>
+          </QuantityContainer>
+        </DetailsContainer>
+        <DescriptionContainer>Description</DescriptionContainer>
+        <DescriptionText>
+          A conversation is never complete until you have a cup of chai Friends
+          visiting each other
+        </DescriptionText>
+      </ContentWrapper>
+    </StyledSection>
   );
 }

@@ -1,61 +1,41 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React from 'react';
 import cart from '@/public/image/cart-tea.png';
-import Dropdown from '@/public/dropdown-icon';
 import StarIcon from '@/public/start-icon';
+import Dropdown from '@/components/ui/Dropdown';
 
 export default function CartItem() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-    console.log(' toggleDropdown ');
-  };
-
   return (
-    <div className="mt-5">
-      <div className="flex gap-1">
+    <div className="my-5 bg-neutral-100 rounded-md">
+      <div className="flex gap-3">
         <div className="flex flex-col">
-          <Image width={131} height={136} src={cart} alt="item" />
-          <div className="relative z-[101] mt-3">
-            <div
-              className=" flex w-[64px] items-center gap-1 rounded border-2 border-teaBlue px-1 py-2"
-              onClick={toggleDropdown}
-            >
-              <div className="text-sm font-semibold ">Qty:2</div>
-              <Dropdown />
-            </div>
-            <div
-              className={`absolute ${
-                isOpen ? 'block' : 'hidden'
-              } mt-2 w-[64px] rounded border bg-white`}
-            >
-              <ul>
-                <li className="px-4 py-2 text-sm"> Qty:2 </li>
-                <li className="px-4 py-2 text-sm"> Qty:2</li>
-                <li className="px-4 py-2 text-sm"> Qty:2 </li>
-              </ul>
-            </div>
+          <Image width={120} height={125} src={cart} alt="item" />
+          <div className="mt-2 flex justify-center">
+            <Dropdown
+              label="Qty:2"
+              size="w-[64px]"
+              content={['Qty:3', 'Qty:4', 'Qty:5']}
+            />
           </div>
         </div>
 
-        <div className="flex flex-col space-y-2">
-          <div className="text-md text-center">Spiced Milk Tea</div>
-          <div className="flex items-center">
-            <div className="mr-1 text-sm  font-semibold"> 48</div>
+        <div className="flex flex-col">
+          <div className="text-md mb-2 text-center">Spiced Milk Tea</div>
+          <div className="mb-2 flex items-center">
+            <div className="mr-1 text-sm  font-semibold "> 48</div>
             <StarIcon />
           </div>
-          <div className="flex flex-row gap-1">
+          <div className="mb-3 flex flex-row gap-1">
             <div className="text-teaGrayLight line-through">Rs.40</div>
             <div className="font-bolt">Rs.30</div>
             <div className="font-bold text-teaBlue">10% off</div>
           </div>
-          <div className="text-center font-bold text-teaBlue ">
+          <div className="mb-2 text-center font-bold text-teaBlue">
             free delivery
           </div>
-          <div className="mb-3 flex gap-1">
-            <button className="rounded-md bg-teaGrayLight px-[2px] text-sm font-bold">
-              save for later
+          <div className="mb-3 flex justify-between">
+            <button className="rounded-md bg-teaGrayLight px-[2px] text-sm font-bold ">
+              save 
             </button>
             <button className="rounded-md bg-teaGrayLight px-[2px] text-sm font-bold">
               remove

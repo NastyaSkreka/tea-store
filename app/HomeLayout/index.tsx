@@ -7,10 +7,11 @@ interface IProps {
 }
 export default function HomeLayout({ children }: IProps) {
   return (
-    <>
+    <div className='main--wrapper--main'>
       <Header variant="full" />
       {children}
       <Footer variant="nav" />
-    </>
+    </div>
   );
+
 }
