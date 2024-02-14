@@ -1,7 +1,7 @@
 
 interface IProps{
-    color: string;
-    fill: string;
+    color?: string;
+    fill?: string;
 }
 
 export default function Heart({ color, fill }: IProps) {
