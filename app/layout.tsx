@@ -10,11 +10,7 @@ import PhoneWrapper from '@/components/ui/phoneWrapper';
 const raleway = Raleway({ subsets: ['latin'] })
 
 
-export default function RootLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={raleway.className}>

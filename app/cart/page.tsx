@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React from 'react';
 import { usePathname  } from 'next/navigation';
@@ -8,7 +8,7 @@ import PageLayout from '@/components/ui/pageLayout';
 import Footer from '@/components/ui/Footer';
 
 export default function Cart() {
-  const pathname = usePathname().replace('/', ' ')
+  const pathname = usePathname().replace('/', ' ');
 
   return (
     <PageLayout 
