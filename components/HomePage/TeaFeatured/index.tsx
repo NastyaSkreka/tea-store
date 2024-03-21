@@ -1,7 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
-import { useGetTeasQuery } from '@/lib/services/teaService';
-import TeaShopItem from '@/components/HomePage/TeaShopItem';
+import React from 'react';
 import {
     FeaturedTeaSection, 
     FeaturedTeaTitle,
@@ -12,15 +10,16 @@ interface TeaFeaturedProps {
     searchTerm: string;
   }
 
+  // TODO: add data from server
 export default function TeaFeatured({searchTerm}:TeaFeaturedProps) {
 
-    const [filteredData, setFilteredData] = useState<any[]>([]);
-    const { data, error, isLoading } = useGetTeasQuery('');
+   // const [filteredData, setFilteredData] = useState<any[]>([]);
+   // const { data, error, isLoading } = useGetTeasQuery('');
 
 
-  useEffect(() => {
+ /* useEffect(() => {
     handleSearch(searchTerm);
-    }, [searchTerm, data]);
+    }, [searchTerm, data]); 
 
   const handleSearch = (searchTerm: string) => {
     if (!searchTerm) {
@@ -35,18 +34,21 @@ export default function TeaFeatured({searchTerm}:TeaFeaturedProps) {
     setFilteredData(filtered);
   };
 
+  
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
-
+*/
   return (
     <FeaturedTeaSection>
       <FeaturedTeaTitle>Featured tea shops</FeaturedTeaTitle>
       <TeaShopListContainer>
-        {filteredData &&
+    {/*  {filteredData &&
           filteredData.map((teaShop: any, index: number) => (
                 <TeaShopItem key={index} {...teaShop} />
           ))}
+        */ }
       </TeaShopListContainer>
     </FeaturedTeaSection>
   );

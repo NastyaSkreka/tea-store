@@ -14,11 +14,12 @@ import FacebookIcon from '@/public/facebook-icon';
 import InstagramIcon from '@/public/instagram-icon';
 import Button from '@/components/ui/Button';
 import { signInSchema } from '@/schemas/authentication.schema';
-
+import { useActions } from '@/lib/hooks/useActions';
 
 const LoginForm = () => {
-    
-    return (
+    const {login} = useActions()
+
+    return ( 
         <Formik
         initialValues={{
           email: '',
@@ -26,8 +27,8 @@ const LoginForm = () => {
         }}
         validationSchema={signInSchema}
         onSubmit={(values) => {
-          console.log(values);
-        }}
+            login(values);
+            }}      
       >
         {({}) => (
         <Form>
@@ -43,7 +44,7 @@ const LoginForm = () => {
                     <ErrorMessage name="password" component={ErrorText}  />
                 </FieldContainer>
                 <FormLink>forgot password</FormLink>
-                <Button color="white" label='Log in'/>
+                <Button color="white" label='Log in'/> 
                 <ContinueContainer>
                     <Line />
                     <ContinueText>Or continue with</ContinueText>
@@ -59,6 +60,6 @@ const LoginForm = () => {
          )}
     </Formik>
     );
-  };
+};
   
   export default LoginForm;
