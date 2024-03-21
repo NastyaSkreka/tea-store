@@ -12,9 +12,6 @@ const UserInfo = () => {
         <FormContainer>
         <UserImage width={50} height={50}  src={avatar} alt="avatar" />
             <FieldContainer>
-                <TextFiled>user </TextFiled>
-            </FieldContainer>
-            <FieldContainer>
                 <TextFiled>user@gmail.com</TextFiled>  
             </FieldContainer>
             <FieldContainer>

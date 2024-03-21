@@ -2,8 +2,11 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { FormContainer, Input, FormLabel, ErrorText , FieldContainer} from "../style";
 import Button from '@/components/ui/Button';
 import { signUpSchema } from '@/schemas/authentication.schema';
+import { useActions } from '@/lib/hooks/useActions';
 
 const SignUp = () => {
+    const {register} = useActions()
+
   return (
     <Formik
       initialValues={{
@@ -13,8 +16,9 @@ const SignUp = () => {
         mobileNumber: '',
       }}
       validationSchema={signUpSchema} 
-      onSubmit={(values) => {
-        console.log(values);
+      onSubmit={(data) => {
+        console.log("SignUp =>", data)
+        register(data);
       }}
     >
       {({}) => (
@@ -37,8 +41,8 @@ const SignUp = () => {
             </FieldContainer>
             <FieldContainer>
                 <FormLabel>Mobile number</FormLabel>
-                <Field type="text" name="mobileNumber" as={Input} />
-                <ErrorMessage name="mobileNumber" component={ErrorText} />
+                <Field type="string" name="phone" as={Input} />
+                <ErrorMessage name="phone" component={ErrorText} />
             </FieldContainer>
                 <Button color="white" label="Register" position='absolute'/>
         </FormContainer>
