@@ -7,7 +7,7 @@ import AnimatedForm from '@/components/AuthPages/AnimatedForm';
 import Button from "@/components/ui/Button";
 
 
-export default function Explore() {
+export default function ExplorePage() {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleForm = () => {

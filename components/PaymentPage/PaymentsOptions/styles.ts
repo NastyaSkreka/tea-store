@@ -18,11 +18,11 @@ export const StyledCheckbox = styled.input`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 2px solid #00575F;
+  border: 2px solid var(--primary-color);
   transition: all 0.1s;
 
   &:checked {
-    background-color: #00575F;
+    background-color: var(--primary-color);
   }
 
 `;

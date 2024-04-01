@@ -11,8 +11,8 @@ export const  FieldContainer = styled.div`
 `
 
 export const Input = styled.input`
-    border: none;
-    border-bottom: 1px solid black; 
+  
+    border-bottom: 1px solid #000; 
     margin-bottom: 2px;
     padding: 5px;
     outline: none;
@@ -29,7 +29,7 @@ export const ContinueContainer = styled.div`
 export const Line = styled.div`
     flex-grow: 1;
     height: 1px;
-    background-color: black;
+    background-color: var(--textPrimary-color);
 `;
 
 export const ContinueText = styled.div`
@@ -37,7 +37,7 @@ export const ContinueText = styled.div`
 `;
 
 export const ErrorText = styled.p`
-    color: red;
+    color: var(--error-color);
     font-size: 14px;
     margin: 0;
 `;

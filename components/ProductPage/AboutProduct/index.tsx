@@ -1,59 +1,60 @@
 "use client"
 import React from 'react';
-import product from '@/public/image/product.png';
-import Minus from '@/public/minus-icon';
-import Plus from '@/public/plus-icon';
-import StarIcon from '@/public/start-icon';
-import Clock from '@/public/clock-icon';
+import { FaRegClock } from "react-icons/fa";
 import {
     StyledImage,
     StyledSection,
     ContentWrapper,
     DetailsContainer,
     Title,
-    RatingContainer,
     DurationContainer,
     DurationValue,
-    QuantityContainer,
-    QuantityValue,
     InfoContainer,
     DescriptionContainer,
     DescriptionText,
-    RatingValue
+    ReviewContainer,
+    ReviewAuthor, 
 } from './styles'
+import ProductRating from '@/components/ui/ProductRating';
 
-export default function AboutProduct() {
+export default function AboutProduct({product} : {product: any }) {
+  
   return (
+
     <StyledSection>
-    <StyledImage src={product} alt="product" />
+    <StyledImage width={500} height={350} src={product?.image} alt={product?.name} />
     <ContentWrapper>
       <DetailsContainer>
         <InfoContainer>
-          <Title>Spiced Lemon Tea</Title>
-          <RatingContainer>
-             <RatingValue>4.8</RatingValue>
-            <StarIcon />
-          </RatingContainer>
+          <Title>{product?.name}</Title>
+             <ProductRating product={product}/> 
           <DurationContainer>
-            <Clock />
-            <DurationValue>24 min</DurationValue>
+            <FaRegClock />
+            <DurationValue>{product?.time}</DurationValue>
           </DurationContainer>
         </InfoContainer>
-        <QuantityContainer>
-          <Minus />
-          <QuantityValue>2</QuantityValue>
-          <Plus />
-        </QuantityContainer>
       </DetailsContainer>
         <DescriptionContainer>Description</DescriptionContainer>
         <DescriptionText>
-          A conversation is never complete until you have a cup of chai
-          Friends visiting each other
+            {product?.description}
         </DescriptionText>
+        <DescriptionContainer>Review</DescriptionContainer>
+     {
+        product?.reviews.map((review: any) => (
+            <ReviewContainer key={review.id}>
+                    <ReviewAuthor>
+                    {review.user.email}
+                    </ReviewAuthor>
+                    <DescriptionText>
+                    {review.text}
+                    </DescriptionText>
+            </ReviewContainer>
+        ))
+    }
+      
     </ContentWrapper>
   </StyledSection>
+   )
+   }
        
-  )
-}
-
 

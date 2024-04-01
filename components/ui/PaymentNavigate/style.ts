@@ -13,20 +13,20 @@ export const Container = styled.div`
 export const PointContainer = styled.div`
     width: 20px;
     height: 20px;
-    border: 2px solid #00575F;
+    border: 2px solid var(--primary-color);
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s ease;
 
     &.active {
-        background-color: #00575F;
+        background-color: var(--primary-color);
       }
     `;
 
 
 
 export const Divider = styled.div`
-    border-bottom: 3px solid #EDF0EF;
+    border-bottom: 3px solid var(--backgroundGrayLight-color);
     flex: 1;
 `;
 

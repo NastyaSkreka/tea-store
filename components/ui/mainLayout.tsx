@@ -1,6 +1,6 @@
 'use client';
 
-import { MainStyled } from '@/lib/template.styles'
+import { MainStyled } from '@/lib/globals'
 import React  from 'react'
 
 interface IProps{
@@ -8,7 +8,7 @@ interface IProps{
    color?: string;
 }
 
-function MainLayout({ children, color = '#fff' }: IProps) {
+function MainLayout({ children, color = 'var(--textSecondary-color)' }: IProps) {
   return (
     <MainStyled color={color}>
         {children}

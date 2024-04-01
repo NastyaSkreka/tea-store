@@ -1,5 +1,5 @@
 import React from 'react';
-import ArrLeft from '@/public/arr-left';
+import { FaArrowLeft } from "react-icons/fa";
 import Image from 'next/image';
 import avatar from '@/public/image/avatar.png';
 
@@ -22,7 +22,7 @@ const checkVariant = (variant?: 'full' | 'with-arr-path' | 'with-arr', path?: st
     case 'full':
       return <FullVariantContainer>
         <Link href="/"  >
-            <ArrLeft />
+        <FaArrowLeft />
         </Link>
         {path === 'product' ? (
             <Link href="/cart"  >
@@ -37,14 +37,14 @@ const checkVariant = (variant?: 'full' | 'with-arr-path' | 'with-arr', path?: st
     case 'with-arr-path':
       return <Link href="/"  >
         <ArrLeftContainer >
-                <ArrLeft />
+        <FaArrowLeft />
                 <PathText>{ path?.toUpperCase() }</PathText>
         </ArrLeftContainer>
         </Link>
     case 'with-arr':
       return <Link href="/"  >
         <ArrLeftContainer>  
-                 <ArrLeft />  
+        <FaArrowLeft />
         </ArrLeftContainer>;
       </Link>
     default:

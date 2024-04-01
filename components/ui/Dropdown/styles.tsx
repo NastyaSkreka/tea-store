@@ -16,7 +16,7 @@ export const DropdownContainer = styled.div`
 export const DropdownButton = styled.div`
   display: flex;
   align-items: center;
-  border: 2px solid #007a7c;
+  border: 2px solid var(--primary-color);
   border-radius: 5px;
   padding: 3px;
   cursor: pointer;
@@ -34,8 +34,8 @@ export const DropdownList = styled.div<DropdownListProps>`
   top: 100%;
   width: ${({ width }) => (width ? width : '100%')};
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
-  border: 2px solid #007a7c;
-  background-color: #fff;
+  border: 2px solid var(--primary-color);
+  background-color: var(--textSecondary-color);
   border-radius: 5px;
 `;
 
@@ -44,12 +44,12 @@ export const DropdownItem = styled.li<{selected? : boolean;}>`
   padding: 8px 12px;
   font-size: 12px;
   cursor: pointer;
-  background-color: ${({ selected }) => (selected ? '#007a7c' : 'transparent')};
-  color: ${({ selected }) => (selected ? '#fff' : '#000')};
+  background-color: ${({ selected }) => (selected ? 'var(--primary-color)' : 'transparent')};
+  color: ${({ selected }) => (selected ? 'white' : 'var(--textPrimary-color)')};
 
   &:hover {
-    background-color: #007a7c;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--textSecondary-color);
   }
 `;
 

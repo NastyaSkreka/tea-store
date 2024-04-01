@@ -1,9 +1,9 @@
 "use client"
 
-import Home from '@/public/home-icon';
-import Heart from '@/public/heart-icon';
-import Favorites from '@/public/fav-icon';
-import User from '@/public/user-icon';
+import { LuHome } from "react-icons/lu";
+import { CiHeart } from "react-icons/ci";
+import { CiBookmark } from "react-icons/ci";
+import { FiUser } from "react-icons/fi";
 import {
     FooterNav,
     IconsContainer,
@@ -14,10 +14,10 @@ import { usePathname } from 'next/navigation';
 
 
 const navLinks = [
-    {id: 1, icon: <Home/>, path: '/'}, 
-    {id: 2, icon: <Heart fill="none" color="#B7C1C2"/>, path: '/favourites'}, 
-    {id: 3, icon: <Favorites/>, path: '/cart'}, 
-    {id: 4, icon: <User />, path: '/explore'}, 
+    {id: 1, icon: <LuHome color="var(--backgroundGrayDark-color)"/>, path: '/'}, 
+    {id: 2, icon: <CiHeart color="var(--backgroundGrayDark-color)"/>, path: '/favourites'}, 
+    {id: 3, icon: <CiBookmark color="var(--backgroundGrayDark-color)"/>, path: '/cart'}, 
+    {id: 4, icon: <FiUser color="var(--backgroundGrayDark-color)"/>, path: '/explore'}, 
 ]
 
 

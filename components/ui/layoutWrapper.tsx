@@ -1,6 +1,6 @@
 'use client';
 
-import { LayoutMainWrapper } from '@/lib/template.styles'
+import { LayoutMainWrapper } from '@/lib/globals';
 import React, { PropsWithChildren } from 'react'
 
 function LayoutWrapper({ children }: PropsWithChildren) {

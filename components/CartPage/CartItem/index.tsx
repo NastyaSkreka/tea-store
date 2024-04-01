@@ -1,73 +1,82 @@
-import React from 'react'
-import cart from '@/public/image/cart.png';
+import React from 'react';
 import {
-    ProductContainer, 
-    ProductRow, 
-    ProductImageContainer, 
-    ProductImage,
-    ProductDetailsContainer,
-    ProductTitle, 
-    RatingContainer,
-    RatingValue, 
-    DiscountContainer, 
-    OriginalPrice,
-    FinalPrice,
-    DiscountText, 
-    FreeDelivery, 
-    ActionButtonsContainer, 
-    SaveButton, 
-    RemoveButton,
-    BuyNowButton,
-    ProductHeader, 
-    StyledButton
-} from './styles'
-import Dropdown from '@/components/ui/Dropdown';
-import StarIcon from '@/public/start-icon';
+  ItemContainer,
+  Row,
+  ProductImage,
+  ProductDetailsContainer,
+  ProductTitle,
+  DiscountContainer,
+  OriginalPrice,
+  FinalPrice,
+  DiscountText,
+  FreeDelivery,
+  ActionButtonsContainer,
+  RemoveButton,
+  BuyNowButton,
+  ProductHeader,
+  QuantityValue,
+  QuantityIconWrapper,
+  QuantityContainer,
+  QuantityColumn,
+} from './styles';
 import Link from 'next/link';
+import { useActions } from '@/lib/hooks/useActions';
+import { useCart } from '@/lib/hooks/useCart';
+import { FaPlus } from 'react-icons/fa';
+import { FaMinus } from 'react-icons/fa';
+import { ICartItem } from '@/lib/types/cart.interface';
 
+export default function CartItem({ item }: { item: ICartItem }) {
+  const { removeFromCart, changeQuantity } = useActions();
+  const { items } = useCart();
+  const quantity = items.find((cartItem) => cartItem.id == item.id)?.quantity;
 
-
-export default function CartItem() {
   return (
-    <>
-    <StyledButton>Proceed to pay</StyledButton>
-    <ProductContainer>
-        <ProductRow>
-            <ProductImageContainer>
-                <ProductImage width={100} height={115} src={cart} alt="cart" />
-                <Dropdown 
-                    label="Qty:2"
-                    content={[
-                    'Qty:3',
-                    'Qty:4',
-                    ]}/>
-            </ProductImageContainer>
-            <ProductDetailsContainer>
-            <ProductHeader>
-            <ProductTitle>
-                Spiced Milk Tea
-            </ProductTitle>
-            <RatingContainer>
-                <RatingValue>4.8</RatingValue>
-                <StarIcon/>
-            </RatingContainer>
-            </ProductHeader>
-            <DiscountContainer>
-                <OriginalPrice>Rs.40</OriginalPrice>
-                <FinalPrice>Rs.30</FinalPrice>
-                <DiscountText>10% off</DiscountText>
-            </DiscountContainer>
-                <FreeDelivery>free delivery</FreeDelivery>
-                <ActionButtonsContainer>
-                    <SaveButton>Save</SaveButton>
-                    <RemoveButton>Remove</RemoveButton>
-                </ActionButtonsContainer>
-                <Link href="/total">
-                   <BuyNowButton>Buy</BuyNowButton>
-                </Link>
-            </ProductDetailsContainer>
-        </ProductRow>
-    </ProductContainer>
-    </>
-  )
+    <ItemContainer>
+      <Row>
+        <QuantityColumn>
+          <ProductImage
+            width={100}
+            height={80}
+            src={item.product.image}
+            alt={item.product.name}
+          />
+          <QuantityContainer>
+            <QuantityIconWrapper
+              onClick={() => changeQuantity({ id: item.id, type: 'minus' })}
+            >
+              <FaMinus />
+            </QuantityIconWrapper>
+            <QuantityValue>{quantity}</QuantityValue>
+            <QuantityIconWrapper
+              onClick={() => changeQuantity({ id: item.id, type: 'plus' })}
+            >
+              <FaPlus />
+            </QuantityIconWrapper>
+          </QuantityContainer>
+        </QuantityColumn>
+        <ProductDetailsContainer>
+          <ProductHeader>
+            <ProductTitle>{item.product.name}</ProductTitle>
+          </ProductHeader>
+          <DiscountContainer>
+            <OriginalPrice>Rs.40</OriginalPrice>
+            <FinalPrice>{item.product.price}$</FinalPrice>
+            <DiscountText>10% off</DiscountText>
+          </DiscountContainer>
+          <FreeDelivery>free delivery</FreeDelivery>
+          <ActionButtonsContainer>
+            <Link href="/total">
+              <RemoveButton onClick={() => removeFromCart({ id: item.id })}>
+                Remove
+              </RemoveButton>
+            </Link>
+            <Link href="/total">
+              <BuyNowButton>Buy</BuyNowButton>
+            </Link>
+          </ActionButtonsContainer>
+        </ProductDetailsContainer>
+      </Row>
+    </ItemContainer>
+  );
 }

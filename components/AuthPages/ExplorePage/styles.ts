@@ -11,13 +11,13 @@ export const Container = styled.div`
 
 export const Title = styled(motion.div)`
   font-size: 50px;
-  color: white;
+  color: var(--textSecondary-color);
   margin-bottom: 5px;
   text-align: center;
 `;
 
 export const Description = styled(motion.p)<{ isVisible: boolean }>`
-  color: white;
+  color: var(--textSecondary-color);
   width: 215px;
   text-align: center;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};

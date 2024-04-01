@@ -1,20 +1,8 @@
 'use client';
-
-import FavouritesList from "@/components/FavouritesPage/FavouritesList";
-import Footer from "@/components/ui/Footer";
-import PageLayout from "@/components/ui/pageLayout";
-import { usePathname  } from 'next/navigation';
+import FavouritesPage from '@/components/FavouritesPage';
 
 export default function Favourites() {
-    const pathname = usePathname().replace('/', ' ')
-
-    return (
-        <PageLayout 
-            headerVariant='with-arr-path'
-            path={pathname}
-            footer={<Footer/>}
-        >
-           <FavouritesList/>
-        </PageLayout>
-      );
+  return <FavouritesPage />;
 }
+
+Favourites.isOnlyUser = true;

@@ -12,7 +12,7 @@ export const FooterNav = styled.div`
     justify-content: center;
     border-bottom-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
-    background-color: #FAF8F8;
+    background-color: var(--textSecondary-color);
     padding: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -33,11 +33,12 @@ export const NavItem = styled.div`
   svg {
     width: 20px;
     height: 20px;
+
   }
 
   &.active {
     border-radius: 10px;
     padding: 10px;
-    background-color: #00575F;
+    background-color: var(--primary-color);
   }
 `;

@@ -11,7 +11,6 @@ import {
     RatingValue,
     Select
 } from './styles'
-import StarIcon from '@/public/start-icon'
 
 export default function SimilarProducts() {
   return (
@@ -23,7 +22,6 @@ export default function SimilarProducts() {
         <ProductName>pure Milk Tea</ProductName>
         <RatingContainer>
           <RatingValue>4.8</RatingValue>
-          <StarIcon />
         </RatingContainer>
       </ProductDetails>
       <Select />

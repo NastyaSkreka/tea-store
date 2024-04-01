@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   position: relative;
   width: 100%;
   max-width: 350px;
-  background: #ffff;
+  background: var(--textSecondary-color);
   overflow: hidden;
   min-height: 620px;
   background-size: cover;
@@ -34,11 +34,11 @@ export const Wrapper = styled.div`
   }
 
   & .main--wrapper--main {
-    background: #fff;
+    background: var(--textSecondary-color);
   }
 
   & .main--wrapper--secondary {
-    background: #00575F;
+    background: var(--primary-color);
   }
 
   &  main {

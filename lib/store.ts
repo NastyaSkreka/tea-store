@@ -1,19 +1,43 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import teaApi from '@/lib/services/teaService';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { userSlice } from './redux/user/user.slice';
+import { cartSlice } from './redux/cart/cart.slice';
+import {
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  persistReducer,
+  persistStore,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+
+
+const persistConfig = {
+    key: 'tea', 
+    storage, 
+    whitelist: ['cart']
+}
 
 const rootReducer = combineReducers({
-    user: userSlice.reducer,
-   // [teaApi.reducerPath]: teaApi.reducer, 
-})
+  user: userSlice.reducer,
+  cart: cartSlice.reducer
+});
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const store = configureStore({
-  reducer: rootReducer,
- // middleware: (getDefaultMiddleware) =>
-  //  getDefaultMiddleware().concat(teaApi.middleware),
+  reducer: persistedReducer,
+   middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+        serializableCheck: {
+            ignoredActions: [ FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
+        }
+    })
 });
 
 setupListeners(store.dispatch);
-
-export type TypeRootState = ReturnType<typeof rootReducer>
+export const persistor = persistStore(store)
+export type TypeRootState = ReturnType<typeof rootReducer>;

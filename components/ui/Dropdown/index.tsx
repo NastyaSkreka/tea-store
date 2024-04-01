@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import DropdownIcon from '@/public/dropdown-icon'
+import { MdKeyboardArrowDown } from "react-icons/md"
 import {
     DropdownContainer,
     DropdownButton,
@@ -50,7 +50,7 @@ const Dropdown = ({ content, size = '', label = '' }: IDropdownProps) => {
                 onClick={toggleDropdown}
             >
             <DropdownText>{selectedItem || label}</DropdownText>
-            <DropdownIcon />
+            <MdKeyboardArrowDown />
             </DropdownButton>
 
            <DropdownList isOpen={isOpen} width={size}>

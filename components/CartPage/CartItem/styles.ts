@@ -1,47 +1,58 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-export const StyledButton = styled.button`
-    margin: 10px 0;
-    background-color: #00575F;
-    color: #fff;
-    width: 100%;
-    height: 35px;
-    border-radius: 12.5px;
-    font-weight: bold;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center
-`
-
-export const ProductContainer = styled.div`
-  margin-top: 10px;
-  background-color: #f4f4f4;
+export const ItemContainer = styled.div`
+ margin: 10px;
+  background-color: var(--backgroundGrayLight-color);
   border-radius: 8px;
   padding: 5px;
+  display: flex;
+  align-items: center;
+
 `;
 
-export const ProductRow = styled.div`
-  display: flex;
-  gap: 10px;
-`;
+export const QuantityColumn = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+`
 
-export const ProductImageContainer = styled.div`
+export const QuantityContainer = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 10px;
+`
+
+export const QuantityIconWrapper = styled.div`
+    background-color: var(--primary-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        color: var(--textSecondary-color)
+    }
+`
+
+export const QuantityValue = styled.div`
+    font-size: 14px;
+    font-weight: 700;
+`
+
+export const Row = styled.div`
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 `;
 
 export const ProductImage = styled(Image)`
-   width: 100%;
-   object-fit: contain;
+  object-fit: cover;
 `;
 
-export const QuantityContainer = styled.div`
-  margin-top: 2px;
-  display: flex;
-  justify-content: center;
-`;
 
 export const ProductDetailsContainer = styled.div`
   display: flex;
@@ -49,14 +60,14 @@ export const ProductDetailsContainer = styled.div`
 `;
 
 export const ProductHeader = styled.div`
-    display: flex;
-    gap: 5px;
-    margin-bottom: 10px;
-`
+  display: flex;
+  gap: 5px;
+  margin-bottom: 7px;
+`;
 
 export const ProductTitle = styled.div`
   font-size: 14px;
-
+  font-weight: 700;
 `;
 
 export const RatingContainer = styled.div`
@@ -73,7 +84,7 @@ export const RatingValue = styled.div`
 export const DiscountContainer = styled.div`
   display: flex;
   gap: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 7px;
 `;
 
 export const OriginalPrice = styled.div`
@@ -91,54 +102,45 @@ export const DiscountText = styled.div`
   font-weight: semibold;
   font-size: 14px;
   margin-left: 10px;
-  color: #007a7c;
+  color: var(--primary-color);
 `;
 
 export const FreeDelivery = styled.div`
   margin-bottom: 20px;
   font-size: 14px;
   font-weight: bold;
-  color: #007a7c;
+  color: var(--primary-color);
 `;
 
 export const ActionButtonsContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 12px;
+  align-items: center;
+
+  gap: 20px;
 `;
 
-export const SaveButton = styled.button`
-  border: none;
-  border-radius: 4px;
-  background-color: #7d7d7d;
-  padding: 2px 8px;
-  font-size: 12px;
-  font-weight: bold;
-  color: #fff;
-  cursor: pointer;
-`;
 
 export const RemoveButton = styled.button`
   border: none;
   border-radius: 4px;
   background-color: #7d7d7d;
-  padding: 2px 8px;
+  padding: 5px 8px;
   font-size: 12px;
   font-weight: bold;
-  color: #fff;
+  color: var(--textSecondary-color);
   cursor: pointer;
 `;
 
 export const BuyNowButton = styled.button`
   margin: 0 auto;
-  width: 133px;
+  width: 70px;
   border: none;
   border-radius: 4px;
-  background-color: #007a7c;
-  padding: 4px 8px;
+  background-color: var(--primary-color);
+  padding: 5px 8px;
   font-size: 12px;
   font-weight: bold;
-  color: #fff;
+  color: var(--textSecondary-color);
   cursor: pointer;
 `;
 

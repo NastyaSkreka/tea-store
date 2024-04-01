@@ -7,7 +7,7 @@ export const StyledForm = styled(motion.div)`
     border-top-left-radius: 20px;
     border-top-right-radius: 20px; 
     width: 100%;
-    background: #FAF8F8;
+    background: var(--textSecondary-color);
     opacity: 1;
     transform: translateY(0%) translateZ(0px);
     height: 450px;
@@ -29,5 +29,5 @@ export const SwitchButton = styled.button<{ isActive: boolean }>`
 export const Spacer = styled.div`
     width: 4px;
     height: 40px;
-    background-color: #CFCFCF;
+    background-color: var(--backgroundGrayLight-color);
 `;
