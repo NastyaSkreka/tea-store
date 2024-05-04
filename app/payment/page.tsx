@@ -1,7 +1,10 @@
 'use client';
 
-import PaymentPage from '@/components/PaymentPage';
+import PaymentPage from '@/app/payment/_components';
+import PageLayout from '@/components/ui/Layouts/pageLayout';
 
 export default function Payment() {
-  return <PaymentPage />;
+  return  <PageLayout>
+    <PaymentPage />
+  </PageLayout>
 }

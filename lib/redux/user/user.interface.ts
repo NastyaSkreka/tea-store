@@ -1,8 +1,13 @@
 import { IUser } from "@/lib/types/user.interface";
 
+export enum Role {
+    USER = "USER",
+    ADMIN = "ADMIN"
+}
+
 export interface IUserState {
     email: string;
-   // isAdmin: boolean;
+    role: Role
 }
 
 export interface ITokens {

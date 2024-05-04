@@ -4,6 +4,7 @@ import axios from 'axios'
 import Cookies from 'js-cookie'
 import { saveToStorage } from './auth.helper'
 import { instance } from '@/lib/api/api.interceptor'
+import { REFRESH_TOKEN } from '@/lib/constants/token.constants'
 
 
 export const AuthService = {
@@ -21,7 +22,7 @@ export const AuthService = {
     }, 
 
     async getNewTokens() {
-        const refreshToken = Cookies.get('refreshToken')
+        const refreshToken = Cookies.get(REFRESH_TOKEN)
 
         const responce = await axios.post<string, { data: IAuthResponse }>(
             process.env.NEXT_PUBLIC_API_URL + '/auth/login/access-token', 

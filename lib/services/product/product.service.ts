@@ -24,11 +24,27 @@ export const ProductService = {
     },
 
     async getSimilar(id: string | number) {
-        return instance<IProduct>({
+        return instance<IProduct[]>({
             url: `${PRODUCTS}/similar/${id}`, 
             method: 'GET'
         })
     }, 
+
+    async getBySlug( slug: string) {
+        const { data } = await instance<IProduct>({
+            url: `${PRODUCTS}/by-slug/${slug}`, 
+            method: 'GET'
+        })
+
+        return data
+    }, 
+
+    async getByCategory( categorySlug: string) {
+        return instance<IProduct[]>({
+            url: `${PRODUCTS}/by-category/${categorySlug}`, 
+            method: 'GET'
+        })
+    },
 
     async create() {
         return instance<IProduct>({

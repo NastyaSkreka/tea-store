@@ -6,9 +6,9 @@ interface IStyledButtonProps {
   }
 
 export const StyledButton = styled.button<IStyledButtonProps>`
-  background-color: ${(props) => (props.color === 'green' ? 'teal' : 'white')};
-  color: ${(props) => (props.color === 'green' ? 'white' : 'teal')};
-  border: ${(props) => (props.color === 'white' ? '1px solid #000' : 'teal')};
+  background-color: ${(props) => (props.color === 'green' ? 'var(--primary-color)' : 'white')};
+  color: ${(props) => (props.color === 'green' ? 'white' : 'var(--primary-color)')};
+  border: ${(props) => (props.color === 'white' ? '1px solid #000' : 'var(--primary-color)')};
   width: 223px;
   height: 41px;
   border-radius: 20.5px;
@@ -17,7 +17,6 @@ export const StyledButton = styled.button<IStyledButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px auto;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 
     ${(props) => props.position === 'absolute' && `

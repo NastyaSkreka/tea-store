@@ -1,6 +1,6 @@
 'use client';
-import MainLayout from '@/components/ui/mainLayout';
-import ExplorePage from '@/components/AuthPages/ExplorePage';
+import MainLayout from '@/components/ui/Layouts/mainLayout';
+import ExplorePage from '@/app/explore/_components';
 
 export default function Explore() {
   return (

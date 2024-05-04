@@ -1,3 +1,4 @@
+import { ICategory } from "./category.interface";
 import { IReview } from "./review.interface";
 
 export interface IProduct{
@@ -10,6 +11,8 @@ export interface IProduct{
     miles: string;
     time: string;
     reviews: IReview[];
+    category: ICategory;
+    slug: string;
 }
 
 export type TypeProducts = {
@@ -20,3 +23,4 @@ export type TypePaginationProducts = {
     lenght: number, 
     products: IProduct[]
 }
+

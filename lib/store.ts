@@ -13,6 +13,7 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { filtersSlice } from './redux/filters/filters.slice';
 
 
 const persistConfig = {
@@ -23,7 +24,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   user: userSlice.reducer,
-  cart: cartSlice.reducer
+  cart: cartSlice.reducer, 
+  filters: filtersSlice.reducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

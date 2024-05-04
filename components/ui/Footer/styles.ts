@@ -1,44 +1,32 @@
 import styled from 'styled-components';
 
-export const FooterNav = styled.div`
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    height: 90px;
-    width: 300px;
-    align-items: center;
-    justify-content: center;
-    border-bottom-left-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
-    background-color: var(--textSecondary-color);
-    padding: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-`
-
-export const IconsContainer = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 30px;
-`
-
-export const NavItem = styled.div`
+export const FooterContainer = styled.footer`
+  width: 100%;
+  max-width: 1200px;
+  background-color: var(--primary-color);
+  color: var(--textSecondary-color);
+  max-height: 100px;
   padding: 10px;
+  border-radius: 5px;
+`;
+
+export const FooterWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const ActionsContainer = styled.div`
+  display: flex;
+  font-size: 28px;
   cursor: pointer;
-  border-radius: 10px;
-  transition: background-color 0.3s;
-
-  svg {
-    width: 20px;
-    height: 20px;
-
-  }
-
-  &.active {
-    border-radius: 10px;
-    padding: 10px;
-    background-color: var(--primary-color);
-  }
+  gap: 15px;
+  margin: 10px 20px 0 20px;
+`;
+export const NavContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+export const NavLink = styled.div`
+  margin: 0px 20px;
 `;

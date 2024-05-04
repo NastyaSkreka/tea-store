@@ -3,7 +3,7 @@ const nextConfig = {
     compiler: {
         styledComponents: true
     }, 
-    images: { domains: ['d2jx2rerrg6sh3.cloudfront.net' , 'twinings.co.uk'] 
+    images: { domains: ['twinings.co.uk' , 'i.pinimg.com', 'd2jx2rerrg6sh3.cloudfront.net', 'www.davidstea.com', 'res.cloudinary.com'] 
     }
 };
 

@@ -7,13 +7,18 @@ export type TypeProductData = {
     image: string, 
     miles: string, 
     time: string, 
+    categoryId: number,
 }
 
 export type TypeProductDataFilters = {
-    sort?: EnumProductSort, 
+    sort?: EnumProductSort | string, 
     searchTerm?: string, 
-    page?: string | number, 
-    perPage?: string | number
+    page: string | number, 
+    perPage: string | number, 
+    rating: string, 
+    minPrice?: string, 
+    maxPrice?: string
+    categoryId?: string,
 }
 
 export enum EnumProductSort {
@@ -23,3 +28,6 @@ export enum EnumProductSort {
     OLDEST = 'oldest'
 }
 
+export type TypeParamsFilters = {
+    searchTerm: TypeProductDataFilters
+}

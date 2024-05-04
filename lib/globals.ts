@@ -2,7 +2,6 @@
 
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
-import Image from 'next/image';
 
 const colors = {
     primary: '#00575F',
@@ -48,109 +47,28 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ul,
-  ol {
+  ol, 
+  li {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  
-  .container {
-    position: relative;
-    display: flex;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-  }
+
 `;
 
-export const PhoneTemplate = styled(Image)`
-    height: 100%;
+export const Container = styled.div`
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    overflow: hidden;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+
+`;
+
+export const MainContent = styled.div`
+    height: 100vh;
 `
-
-export const LayoutMainWrapper = styled.div`
-    position: relative;
-    display: flex;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-`;
-
-export const MainWrapper = styled.div`
-    position: relative;
-    width: 100%;
-    max-width: 350px;
-    background: var(--textSecondary-color);
-    overflow: hidden;
-    min-height: 620px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 0px 10px;
-
-`;
-
-export const MainStyled = styled.main`
-    border-radius: 38px;
-    padding: 5px;
-    width: 90%;
-    height: 600px;
-    object-fit: cover;
+export const MainStyled = styled.main`  
     background: ${props => props.color || 'var(--textSecondary-color)'}; 
-    overflow: hidden;
-    margin: 20px 0;
-    z-index: 5;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-
-    & ::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    & ::-webkit-scrollbar-thumb {
-        background-color: transparent;
-    }
 `
 
-const MainImage = styled.img`
-  height: 97%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  overflow: hidden;
-  border-radius: 50px;
-`;
-
-const MainContent = styled.div`
-  border-radius: 60px;
-  padding: 30px;
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-  background: var(--textSecondary-color);
-  overflow: scroll;
-  margin: 20px 0;
-`;
-
-const SecondaryContent = styled(MainContent)`
-  background: var(--primary-color);
-`;
-
-const ScrollbarStyle = styled.main`
-  &::-webkit-scrollbar {
-    width: 0.5em;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: transparent;
-  }
-`;
 

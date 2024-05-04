@@ -2,10 +2,10 @@ import { UserService } from "../services/user.service"
 import { useQuery } from '@tanstack/react-query'
 import { useAuth } from "./useAuth";
 
-export const useProfile = () => {
+export const useProfile =  () => {
     const { user} = useAuth()
     
-    const { data } = useQuery({
+    const { data } =  useQuery({
         queryKey: ['get profile'],
         queryFn: () => UserService.getProfile(), 
         enabled: !!user
