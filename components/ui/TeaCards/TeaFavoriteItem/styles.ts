@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const TeaShopCard = styled.div`
   position: relative;
   background-color: var(--backgroundGrayLight-color);
-  padding: 5px 10px; 
+  padding: 7px 10px; 
   border-radius: 5px;
   display: flex;
   align-items:center;
@@ -31,12 +31,9 @@ export const ProductPrice = styled.span`
   color: black;
 `;
 
-export const Distance = styled.span`
-  font-size: 16px;
-  font-weight: 600; 
-  color: var(--primary-color); 
-`;
 
 export const ProductInfoContainer = styled.div`
-
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 `

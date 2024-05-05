@@ -1,6 +1,7 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { ModalOverlay, ModalWindow, CloseModalButton } from './styles';
+import { useLockBodyScroll } from '@/lib/hooks/useLockBodyScroll';
 
 interface IModal {
   isOpen: boolean;
@@ -11,9 +12,11 @@ interface IModal {
 export default function Modal({ children, isOpen, closeModal }: IModal) {
   const modalRef = useRef<HTMLElement | null>(document.getElementById('modal'));
 
+  useLockBodyScroll(isOpen)
   if (!isOpen || !modalRef.current) {
     return null;
-  }
+  } 
+
 
   return ReactDOM.createPortal(
     <ModalOverlay>

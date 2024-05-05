@@ -3,21 +3,23 @@ import { FormContainer, Input, FormLabel, ErrorText , FieldContainer} from "../s
 import Button from '@/components/ui/Button';
 import { signUpSchema } from '@/schemas/authentication.schema';
 import { useActions } from '@/lib/hooks/useActions';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/lib/hooks/useAuth';
 
 const SignUp = () => {
-    const {register} = useActions()
+    const {register} = useActions();
+    const router = useRouter();
+
 
   return (
     <Formik
       initialValues={{
         email: '',
         password: '',
-        confirmPassword: '',
         mobileNumber: '',
       }}
       validationSchema={signUpSchema} 
       onSubmit={(data) => {
-        console.log("SignUp =>", data)
         register(data);
       }}
     >
@@ -39,7 +41,12 @@ const SignUp = () => {
                 <Field type="string" name="phone" as={Input} />
                 <ErrorMessage name="phone" component={ErrorText} />
             </FieldContainer>
-                <Button color="white" label="Register"/>
+          
+                <Button
+                    onClick={() => router.replace('/')} 
+                    color="white" 
+                    label="Register"
+                />
         </FormContainer>
         </Form>
       )}

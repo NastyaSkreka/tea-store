@@ -25,9 +25,8 @@ export const SearchIcon = styled(CiSearch)`
 
 export const FoundedItemsContainer = styled.div`
     position: absolute;
-    top: 55px;
-    right: 230px;
-    width: 315px;
+    top: 60px;
+    right: 185px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     border-radius: 4px;
 `;

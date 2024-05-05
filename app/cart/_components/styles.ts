@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 
 export const CartHeadline = styled.div`
@@ -15,7 +16,7 @@ export const TableHeader = styled.th`
 `
 
 export const CartContainer = styled.div`
-    margin: 20px 0;
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,4 +39,15 @@ export const Title = styled.div`
      font-size: 18px;
      color: var(--primary-color);
      margin: 20px 0;
+`
+
+
+export const EmptyCartInfo = styled.div`
+    
+`
+
+export const CatalogLink = styled(Link)`
+    text-decoration: underline;
+    color: var(--primary-color);
+    font-size: 24px;
 `

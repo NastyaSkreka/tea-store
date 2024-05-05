@@ -3,7 +3,7 @@ import { useFilters } from "@/lib/hooks/useFilters";
 import FilterWrapper from "../FilterWrapper";
 import { RATING_VARIANTS } from "./rating.variants.data";
 import Checkbox from "@/components/ui/Checkbox";
-import { updateRatingsQuery } from "../../../../lib/utils/update.ratings.query";
+import { updateRatingsQuery } from "../../../lib/utils/update.ratings.query";
 import { Rating } from "react-simple-star-rating";
 
 export default function RatingGroup() {

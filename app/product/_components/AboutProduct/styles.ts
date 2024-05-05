@@ -16,7 +16,7 @@ export const StyledImage = styled(Image)`
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 `;
 
 export const ProductTitle = styled.div`
@@ -83,3 +83,8 @@ export const LeaveReviewButton = styled.button`
     cursor: pointer;
 `;
 
+export const ProductReviewsWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+`

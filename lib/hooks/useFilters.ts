@@ -18,6 +18,12 @@ export const useFilters = () => {
   );
 
   useEffect(() => {
+    if (!searchParams.has('page')) {
+      updateQueryParams('page', '1');
+    }
+  }, []);
+  
+  useEffect(() => {
     // для синхронизации данных посковой строки и стора
     searchParams.forEach((value, key) => {
       updateQueryParam({

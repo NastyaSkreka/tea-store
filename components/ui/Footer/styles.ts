@@ -11,9 +11,9 @@ export const FooterContainer = styled.footer`
 `;
 
 export const FooterWrapper = styled.div`
+    justify-content: space-between;
+   align-items: center;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
 `;
 
 export const ActionsContainer = styled.div`
@@ -21,12 +21,15 @@ export const ActionsContainer = styled.div`
   font-size: 28px;
   cursor: pointer;
   gap: 15px;
-  margin: 10px 20px 0 20px;
+  margin: 0px 20px 0 20px;
 `;
-export const NavContainer = styled.div`
-  display: flex;
-  align-items: center;
+
+export const FooterText = styled.div`
+   
 `;
-export const NavLink = styled.div`
-  margin: 0px 20px;
-`;
+
+export const FooterInfoColumn = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+`

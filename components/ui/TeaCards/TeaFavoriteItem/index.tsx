@@ -2,14 +2,14 @@ import Image from 'next/image';
 import {
   TeaShopCard,
   TeaShopName,
-  ProductPrice,
-  Distance, 
+  ProductPrice, 
   ProductInfoContainer
 } from './styles';
 import Link from 'next/link';
 import ProductRating from '@/components/ui/Rating';
 import FavoriteButton from '@/components/ui/Button/FavoriteButton';
 import { IProduct } from '@/lib/types/product.interface';
+import AddToCartButton from '../../Button/AddToCartButton';
 
 
 export default function TeaFavoriteItem({ product }: { product: IProduct}) {
@@ -29,7 +29,7 @@ export default function TeaFavoriteItem({ product }: { product: IProduct}) {
     <ProductInfoContainer>
       <TeaShopName>{product.name}</TeaShopName>
       <ProductRating reviews={product?.reviews} />
-      <Distance>{product.miles}</Distance>
+       <AddToCartButton product={product}/>
       </ProductInfoContainer>
 
       <ProductPrice>{product.price}$</ProductPrice>  

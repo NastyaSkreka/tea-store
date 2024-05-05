@@ -14,13 +14,17 @@ import {
   PriceText,
   ReviewsText,
   LeaveReviewButton,
+  ProductReviewsWrapper
 } from './styles';
 import ProductRating from '@/components/ui/Rating';
 import AddToCartButton from '@/components/ui/Button/AddToCartButton';
-import SimilarProducts from '../../../../components/ui/SimilarProducts';
+import SimilarProducts from '../../../../components/SimilarProducts';
 import LeaveReviewForm from '../LeaveReviewForm';
 import { useAuth } from '@/lib/hooks/useAuth';
 import Modal from '@/components/ui/Modal';
+import NotFoundText from '@/components/ui/NotFoundText';
+import Button from '@/components/ui/Button';
+import Link from 'next/link';
 
 export default function AboutProduct({ product }: { product: any }) {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -37,6 +41,7 @@ export default function AboutProduct({ product }: { product: any }) {
         />
         <InfoContainer>
           <ProductTitle>{product?.name}</ProductTitle>
+          <ProductRating reviews={product?.reviews} />
           <DurationContainer>
             <FaRegClock />
             <DurationValue>{product?.time}</DurationValue>
@@ -44,7 +49,8 @@ export default function AboutProduct({ product }: { product: any }) {
           <ProductHeader>Description</ProductHeader>
           <DescriptionText>{product?.description}</DescriptionText>
           <PriceText>{product?.price}$</PriceText>
-          {user?.role !== 'ADMIN' && <AddToCartButton product={product} />}
+          {user && user?.role !== 'ADMIN' && <AddToCartButton product={product} />}
+          {!user && <Link href='/explore'><Button color="disabled" label='register to buy the product' /></Link> }
         </InfoContainer>
       </StyledSection>
       {user?.role !== 'ADMIN' && (
@@ -53,6 +59,7 @@ export default function AboutProduct({ product }: { product: any }) {
           <SimilarProducts productId={product?.id} />
         </>
       )}
+      <ProductReviewsWrapper>
       <ProductHeader>Customer Reviews</ProductHeader>
       {user && user.role !== 'ADMIN' && (
         <LeaveReviewButton onClick={() => setModalOpen(true)}>
@@ -73,8 +80,9 @@ export default function AboutProduct({ product }: { product: any }) {
           </ReviewContainer>
         ))
       ) : (
-        <div>No reviews yet.</div>
+        <NotFoundText text="No reviews yet."/>
       )}
+      </ProductReviewsWrapper>
     </div>
   );
 }

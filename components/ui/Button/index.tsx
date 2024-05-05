@@ -3,7 +3,7 @@
 import { StyledButton } from './styles';
 
 interface IButtonProps {
-  color: 'green' | 'white';
+  color: 'green' | 'white' | 'disabled';
   label: string;
   position?: string; 
   onClick?: () => void; 

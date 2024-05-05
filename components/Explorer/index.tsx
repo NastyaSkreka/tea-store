@@ -1,23 +1,27 @@
 'use client';
-import TeaCatalog from '../ui/Catalog';
-import Pagination from '../ui/Pagination';
+import TeaCatalog from '../Catalog';
+import Pagination from '../Pagination';
 import SelectComponent from '@/components/ui/Select';
 import { useFilters } from '@/lib/hooks/useFilters';
 import { EnumProductSort } from '@/lib/services/product/product.types';
-import Filters from '../ui/Filters';
+import Filters from '../Filters';
 import {
   ExplorerContainer,
   FiltersContainer,
   CatalogContainer,
 } from './styles';
 import { SORT_SELECT_DATA } from '@/lib/types/sort-select.data';
-
-export default function ProductExplorer({ initialProducts }: any) {
+import NotFoundText from '../ui/NotFoundText';
+import { TypePaginationProducts } from '@/lib/types/product.interface';
+ 
+export default function ProductExplorer({ initialProducts }: { initialProducts: TypePaginationProducts }) {
   const { queryParams, updateQueryParams } = useFilters();
 
+  const isProductsEmpty = initialProducts.products.length === 0;
   return (
-    <div>
-      <ExplorerContainer>
+  
+        <>
+        <ExplorerContainer>
         <FiltersContainer>
           <Filters />
         </FiltersContainer>
@@ -32,7 +36,15 @@ export default function ProductExplorer({ initialProducts }: any) {
               ) || SORT_SELECT_DATA[0]}   
             title="Sort by"
           />
-          <TeaCatalog products={initialProducts.products} />
+
+{isProductsEmpty ? (
+            <NotFoundText text="Product not found" />
+          ) : (
+            <TeaCatalog products={initialProducts.products} />
+          )}
+
+
+          
         </CatalogContainer>
       </ExplorerContainer>
       <Pagination
@@ -40,6 +52,9 @@ export default function ProductExplorer({ initialProducts }: any) {
         currentPage={queryParams.page}
         numberPage={initialProducts.length / +queryParams.perPage}
       />
-    </div>
+      </>
+    
+      
+
   );
 }

@@ -1,13 +1,21 @@
 import styled from 'styled-components';
 
 interface IStyledButtonProps {
-    color: 'green' | 'white';
+    color: 'green' | 'white' | 'disabled';
     position?: string;
   }
 
 export const StyledButton = styled.button<IStyledButtonProps>`
-  background-color: ${(props) => (props.color === 'green' ? 'var(--primary-color)' : 'white')};
-  color: ${(props) => (props.color === 'green' ? 'white' : 'var(--primary-color)')};
+background-color: ${(props) =>
+    props.color === 'green'
+        ? 'var(--primary-color)'
+        : props.color === 'disabled' 
+        ? 'var(--backgroundGrayDark-color)'
+        : 'white'};
+color: ${(props) =>
+    props.color === 'green' || props.color === 'disabled' 
+        ? 'white'
+        : 'var(--primary-color)'};
   border: ${(props) => (props.color === 'white' ? '1px solid #000' : 'var(--primary-color)')};
   width: 223px;
   height: 41px;

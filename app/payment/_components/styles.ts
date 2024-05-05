@@ -42,6 +42,7 @@ export const CheckoutContainer = styled.div``;
 
 
 export const SummaryContainer = styled.div`
+    margin-top: 15px;
     padding: 20px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
     border-radius: 5px;

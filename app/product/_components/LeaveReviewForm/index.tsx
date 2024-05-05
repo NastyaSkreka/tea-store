@@ -11,7 +11,7 @@ import {
   ReviewTextArea,
 } from './styles';
 
-export default function LeaveReviewForm({ productId }: any) {
+export default function LeaveReviewForm({ productId }: { productId: number | string }) {
   const {
     register: formRegister,
     handleSubmit,
@@ -29,8 +29,7 @@ export default function LeaveReviewForm({ productId }: any) {
     mutationFn: (data: IReview) => ReviewService.leave(productId, data),
     onSuccess: () => {
       queryClient.refetchQueries(
-        { queryKey: ['get product by id '] },
-        productId,
+        { queryKey: ['get product by id ', productId]},
       );
     },
   });

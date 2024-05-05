@@ -65,7 +65,7 @@ export const Container = styled.div`
 `;
 
 export const MainContent = styled.div`
-    height: 100vh;
+    min-height: 100vh;
 `
 export const MainStyled = styled.main`  
     background: ${props => props.color || 'var(--textSecondary-color)'}; 

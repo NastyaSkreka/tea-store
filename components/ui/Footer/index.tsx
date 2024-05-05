@@ -5,45 +5,28 @@ import {
     FooterContainer,
     FooterWrapper,
     ActionsContainer,
-    NavContainer,
-    NavLink,
+    FooterText,
+    FooterInfoColumn
 } from './styles';
 
-
-// TODO: получить категории
-
 export default function Footer() {
-  
-
   return (
     <FooterContainer>
       <FooterWrapper>
-        <NavContainer>
-          <NavLink>
-            <a href="#">Home</a>
-          </NavLink>
-          <NavLink>
-            <a href="#">About</a>
-          </NavLink>
-          <NavLink>
-            <a href="#">Contact</a>
-          </NavLink>
-          <NavLink>
-            <a href="#">Home</a>
-          </NavLink>
-          <NavLink>
-            <a href="#">About</a>
-          </NavLink>
-          <NavLink>
-            <a href="#">Contact</a>
-          </NavLink>
-        </NavContainer>
-       
+        <FooterInfoColumn>
+        <FooterText>
+        Find us on social networks
+        </FooterText>
         <ActionsContainer>
             <FaInstagram />
             <CiFacebook />
             <FaWhatsapp />
         </ActionsContainer>
+        </FooterInfoColumn>
+        <FooterInfoColumn>
+        <FooterText>Created by </FooterText>
+        <FooterText>2024</FooterText>
+        </FooterInfoColumn>
       </FooterWrapper>
     </FooterContainer>
   );

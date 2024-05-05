@@ -36,7 +36,7 @@ export const UserMenuItem = styled.div`
 `
 
 export const StyledNavLink = styled(Link)<{isActive: boolean}>`
- margin: 0px 20px;
+ margin: 0px 15px;
  text-decoration: ${props => props.isActive ? 'underline' : ''};
 `;
 
@@ -63,6 +63,7 @@ export const ActionsContainer = styled.div`
 `;
 export const NavContainer = styled.div`
   display: flex;
+  gap: 10px;
   align-items: center;
 `;
 

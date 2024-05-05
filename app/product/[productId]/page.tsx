@@ -5,18 +5,19 @@ import AboutProduct from '../_components/AboutProduct';
 import { useParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
 import { ProductService } from '@/lib/services/product/product.service';
+import Loader from '@/components/ui/Loader';
 
 export default function Product() {
   const { productId } = useParams<{ productId: string }>();
 
-  const { data: product } = useQuery({
+  const { data: product, isLoading } = useQuery({
     queryKey: ['get product by id '],
     queryFn: () => ProductService.getById(productId),
   });
 
   return (
     <PageLayout>
-      <AboutProduct product={product} />
+      {isLoading ? <Loader /> : product && <AboutProduct product={product} />}
     </PageLayout>
   );
 }

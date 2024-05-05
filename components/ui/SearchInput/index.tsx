@@ -9,7 +9,7 @@ import { useQuery } from '@tanstack/react-query';
 import { ProductService } from '@/lib/services/product/product.service';
 import { useFilters } from '@/lib/hooks/useFilters';
 import { useState } from 'react';
-import TeaFavoriteItem from '../Sidebars/FavoritesSidebar/TeaFavoriteItem';
+import TeaFavoriteItem from '../TeaCards/TeaFavoriteItem';
 
 export default function SearchInput() {
   const { queryParams, updateQueryParams } = useFilters();

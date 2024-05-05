@@ -22,6 +22,7 @@ import { useCart } from '@/lib/hooks/useCart';
 import image from '@/public/image/image2.png';
 import Banner from '../../../components/ui/Banner';
 import PaymentItem from '@/components/ui/TeaCards/PaymentItem';
+import Link from 'next/link';
 
 type PaymentMethod = 'Cash' | 'Card' | 'Online';
 
@@ -153,11 +154,13 @@ export default function PaymentPage() {
         </CheckoutContainer>
         <SummaryContainer>
           <Headline>Order summary</Headline>
-           {items &&
+          {items &&
             items.map((product) => (
               <PaymentItem item={product} key={product.id} />
             ))}
-          <EditOrderLink>Edit order</EditOrderLink>
+          <Link href="/cart">
+            <EditOrderLink>Edit order</EditOrderLink>
+          </Link>
           <PaymentLabel>Total - {total}$</PaymentLabel>
         </SummaryContainer>
       </PaymentWrapper>
