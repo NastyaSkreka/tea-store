@@ -24,11 +24,12 @@ export default function LeaveReviewForm({ productId }: { productId: number | str
 
   const queryClient = useQueryClient();
 
+
   const { mutate, isSuccess } = useMutation({
     mutationKey: ['leave review'],
     mutationFn: (data: IReview) => ReviewService.leave(productId, data),
     onSuccess: () => {
-      queryClient.refetchQueries(
+      queryClient.invalidateQueries(
         { queryKey: ['get product by id ', productId]},
       );
     },

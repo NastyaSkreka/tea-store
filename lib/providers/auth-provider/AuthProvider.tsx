@@ -8,8 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { REFRESH_TOKEN } from "@/lib/constants/token.constants";
 import { protectedRoutes } from "./protected-routes.data";
 import { Role } from "@/lib/redux/user/user.interface";
-
-// TODO: I will finish the provider when the admin panel is ready
+import { ADMIN_PANEL_URL } from "@/lib/constants/url.contants";
 
 const AuthProvider: FC<PropsWithChildren<unknown>> = ({
     children
@@ -33,17 +32,17 @@ const AuthProvider: FC<PropsWithChildren<unknown>> = ({
 
     const router = useRouter()
     const isProtectedRoute = protectedRoutes.some(route => pathname?.startsWith(route))
-   // const isAdminRoute = pathname?.startsWith(ADMIN_PANEL_URL)
+     const isAdminRoute = pathname?.startsWith(ADMIN_PANEL_URL)
 
-  // if (!isProtectedRoute && !isAdminRoute) return <>{children}</>
+   if (!isProtectedRoute && !isAdminRoute) return <>{children}</>
   if (!isProtectedRoute) return <>{children}</>
 
   if (user?.role  === Role.ADMIN)  return <>{children}</>
 
   if (user && isProtectedRoute) return <>{children}</>
 
-  // pathname !== '/explore' && router.replace('/explore')
-  // return null
+   pathname !== '/explore' && router.replace('/explore')
+   return null
 }
 
 export default AuthProvider;

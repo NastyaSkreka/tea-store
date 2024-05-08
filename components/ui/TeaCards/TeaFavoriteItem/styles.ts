@@ -7,7 +7,7 @@ export const TeaShopCard = styled.div`
   border-radius: 5px;
   display: flex;
   align-items:center;
-  width: 100%;
+  width: 350px;
   justify-content: space-between;
   margin: 3px 0;
 `;

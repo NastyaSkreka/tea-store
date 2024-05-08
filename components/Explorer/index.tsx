@@ -13,15 +13,18 @@ import {
 import { SORT_SELECT_DATA } from '@/lib/types/sort-select.data';
 import NotFoundText from '../ui/NotFoundText';
 import { TypePaginationProducts } from '@/lib/types/product.interface';
- 
-export default function ProductExplorer({ initialProducts }: { initialProducts: TypePaginationProducts }) {
+
+export default function ProductExplorer({
+  initialProducts,
+}: {
+  initialProducts: TypePaginationProducts;
+}) {
   const { queryParams, updateQueryParams } = useFilters();
 
   const isProductsEmpty = initialProducts.products.length === 0;
   return (
-  
-        <>
-        <ExplorerContainer>
+    <>
+      <ExplorerContainer>
         <FiltersContainer>
           <Filters />
         </FiltersContainer>
@@ -31,20 +34,18 @@ export default function ProductExplorer({ initialProducts }: { initialProducts: 
             onChange={(value) =>
               updateQueryParams('sort', value.key.toString())
             }
-            value={SORT_SELECT_DATA.find(
+            value={
+              SORT_SELECT_DATA.find(
                 (value) => value.key === queryParams.sort,
-              ) || SORT_SELECT_DATA[0]}   
+              ) || SORT_SELECT_DATA[0]
+            }
             title="Sort by"
           />
-
-{isProductsEmpty ? (
-            <NotFoundText text="Product not found" />
+          {isProductsEmpty ? (
+            <NotFoundText text="Products not found" />
           ) : (
             <TeaCatalog products={initialProducts.products} />
           )}
-
-
-          
         </CatalogContainer>
       </ExplorerContainer>
       <Pagination
@@ -52,9 +53,6 @@ export default function ProductExplorer({ initialProducts }: { initialProducts: 
         currentPage={queryParams.page}
         numberPage={initialProducts.length / +queryParams.perPage}
       />
-      </>
-    
-      
-
+    </>
   );
 }

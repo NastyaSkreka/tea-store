@@ -10,7 +10,7 @@ export default function Checkbox({isChecked, onClick, children}: PropsWithChildr
 
     return (
         <CheckboxButton  onClick={onClick}>
-             <CheckboxSquare  isChecked={isChecked} />
+             <CheckboxSquare isChecked={isChecked} />
             <span>{children}</span>
         </CheckboxButton>
     )

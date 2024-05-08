@@ -2,6 +2,7 @@
 import TeaCatalog from '@/components/Catalog';
 import PageLayout from '@/components/ui/Layouts/pageLayout';
 import Loader from '@/components/ui/Loader';
+import NotFoundText from '@/components/ui/NotFoundText';
 import { MainContent } from '@/lib/globals';
 import { ProductService } from '@/lib/services/product/product.service';
 import { useQuery } from '@tanstack/react-query';
@@ -21,7 +22,8 @@ export default function Category() {
         {isLoading ? (
           <Loader />
         ) : (
-          products && <TeaCatalog products={products?.data} />
+          products && products.data.length > 0 ? <TeaCatalog products={products?.data} /> : 
+          <NotFoundText text="No products in this category yet"/>
         )}
       </MainContent>
     </PageLayout>

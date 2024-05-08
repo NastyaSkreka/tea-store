@@ -14,20 +14,22 @@ import {
   ExidIcon,
   EnterIcon,
   UserText,
+  IconContainer
 } from './styles';
-import FavouritesSidebar from '../Sidebars/FavoritesSidebar';
+import FavouritesSidebar from '../ui/Sidebars/FavoritesSidebar';
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useCategories } from '@/lib/hooks/useCategories';
 import { useAuth } from '@/lib/hooks/useAuth';
 import Link from 'next/link';
-import SearchInput from '../SearchInput';
+import SearchInput from '../ui/SearchInput';
 import {
   ADMIN_PANEL_DASHBOARD_URL,
   ADMIN_PANEL_URL,
 } from '@/lib/constants/url.contants';
 import Logo from '@/public/logo';
 import { useActions } from '@/lib/hooks/useActions';
+import { Role } from '@/lib/redux/user/user.interface';
 
 
 export default function Header() {
@@ -41,9 +43,9 @@ export default function Header() {
   const isActive = (path: string) => path === pathname;
 
   const handleUserIconClick = () => {
-    user &&
+    
       router.push(
-        user.role === 'USER' ? ADMIN_PANEL_URL : ADMIN_PANEL_DASHBOARD_URL,
+        !user || user.role === Role.USER ? ADMIN_PANEL_URL : ADMIN_PANEL_DASHBOARD_URL,
       );
   };
 
@@ -67,20 +69,24 @@ export default function Header() {
         <SearchInput />
         <ActionsContainer>
           <MdAdminPanelSettings onClick={() => handleUserIconClick()} />
-          {user && user.role !== 'ADMIN' && (
+          <IconContainer>
+          {user && user.role == Role.USER && (
             <CiHeart onClick={() => setIsSidebarOpen(!isSidebarOpen)} />
           )}
+          </IconContainer>
           {isSidebarOpen && (
             <FavouritesSidebar
               isOpen={isSidebarOpen}
               onClose={() => setIsSidebarOpen(!isSidebarOpen)}
             />
           )}
-          {user && user.role !== 'ADMIN' && (
+          <IconContainer>
+          {user && user.role == Role.USER && (
             <Link href="/cart">
               <PiShoppingCartSimpleThin />
             </Link>
           )}
+          </IconContainer>
           <UserIcon onClick={() => setIsOpen(!isOpen)} />
             <UserMenu isOpen={isOpen}>
               <UserMenuItem >
@@ -88,11 +94,10 @@ export default function Header() {
                 {user ? 
                 <ExidIcon onClick={() => logout()}/>
                  : 
-                 <EnterIcon onClick={() => router.replace('/explore')}/>
+                 <EnterIcon onClick={() => router.push('/explore')}/>
                 }
               </UserMenuItem>
             </UserMenu>
-         
         </ActionsContainer>
       </HeaderWrapper>
     </HeaderContainer>

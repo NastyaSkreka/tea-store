@@ -70,3 +70,8 @@ export const NavContainer = styled.div`
 export const UserIcon = styled(PiUserCircleThin)`
 
 `
+export const IconContainer = styled.div`
+    width: 28px;
+    height: 28px;
+
+`

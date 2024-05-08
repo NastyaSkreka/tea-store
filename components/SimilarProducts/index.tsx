@@ -15,7 +15,7 @@ export default function SimilarProducts({ productId }: { productId: number }) {
       {isLoading ? (
         <Loader />
       ) : (
-        similarProducts && <TeaCatalog products={similarProducts?.data} />
+        similarProducts &&  <TeaCatalog products={similarProducts?.data} /> 
       )}
     </SimilarProductsContainer>
   );

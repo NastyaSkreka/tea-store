@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { IoMdClose } from "react-icons/io";
 
 export const TeaShopCard = styled.div`
   background-color: var(--backgroundGrayLight-color);
@@ -7,8 +8,16 @@ export const TeaShopCard = styled.div`
   padding: 5px; 
 `;
 
-export const DeleteButton = styled.button`
-       
+export const DeleteButton = styled(IoMdClose)`
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 50%;
+    border: 2px solid var(--textSecondary-color);
+    background-color:var(--backgroundGrayLight-color);
+    padding: 2px; 
+    color: var(--primary-color);
+    cursor: pointer;
 `
 
 export const Image = styled.img`

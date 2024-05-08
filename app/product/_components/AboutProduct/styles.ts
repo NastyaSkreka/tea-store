@@ -84,6 +84,7 @@ export const LeaveReviewButton = styled.button`
 `;
 
 export const ProductReviewsWrapper = styled.div`
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     gap: 15px;

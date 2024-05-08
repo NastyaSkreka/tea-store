@@ -6,8 +6,7 @@ import RatingGroup from "./RatingsGroup";
 export default function Filters() {
 
     return (
-        <div
-        >
+        <div>
         <CategoryGroup/>    
          <PriceGroup/> 
          <RatingGroup/>

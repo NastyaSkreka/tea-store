@@ -25,11 +25,13 @@ import Modal from '@/components/ui/Modal';
 import NotFoundText from '@/components/ui/NotFoundText';
 import Button from '@/components/ui/Button';
 import Link from 'next/link';
+import { Role } from '@/lib/redux/user/user.interface';
 
 export default function AboutProduct({ product }: { product: any }) {
   const [isModalOpen, setModalOpen] = useState(false);
   const { user } = useAuth();
 
+  console.log("user =>", user)
   return (
     <div>
       <StyledSection>
@@ -44,16 +46,16 @@ export default function AboutProduct({ product }: { product: any }) {
           <ProductRating reviews={product?.reviews} />
           <DurationContainer>
             <FaRegClock />
-            <DurationValue>{product?.time}</DurationValue>
+            <DurationValue>{product?.time} min</DurationValue>
           </DurationContainer>
           <ProductHeader>Description</ProductHeader>
           <DescriptionText>{product?.description}</DescriptionText>
           <PriceText>{product?.price}$</PriceText>
-          {user && user?.role !== 'ADMIN' && <AddToCartButton product={product} />}
+          {user && user?.role == Role.USER && <AddToCartButton product={product} />}
           {!user && <Link href='/explore'><Button color="disabled" label='register to buy the product' /></Link> }
         </InfoContainer>
       </StyledSection>
-      {user?.role !== 'ADMIN' && (
+      {user?.role == Role.USER && (
         <>
           <ProductHeader>Similar products</ProductHeader>
           <SimilarProducts productId={product?.id} />
@@ -61,16 +63,16 @@ export default function AboutProduct({ product }: { product: any }) {
       )}
       <ProductReviewsWrapper>
       <ProductHeader>Customer Reviews</ProductHeader>
-      {user && user.role !== 'ADMIN' && (
+      {user && user.role == Role.USER && (
         <LeaveReviewButton onClick={() => setModalOpen(true)}>
           Leave a review
         </LeaveReviewButton>
       )}
-      {user && user.role !== 'ADMIN' && (
+
         <Modal isOpen={isModalOpen} closeModal={() => setModalOpen(false)}>
           <LeaveReviewForm productId={product?.id} />
         </Modal>
-      )}
+    
       {product?.reviews.length > 0 ? (
         product?.reviews.map((review: any) => (
           <ReviewContainer key={review.id}>
