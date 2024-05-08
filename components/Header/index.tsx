@@ -1,48 +1,105 @@
-import React from 'react';
-import ArrLeft from '@/public/arr-left';
-import Image from 'next/image';
-import avatar from '@/public/image/avatar.png';
-import cart from '@/public/image/сart.png'
+'use client';
+import { CiHeart } from 'react-icons/ci';
+import { PiShoppingCartSimpleThin } from 'react-icons/pi';
+import { MdAdminPanelSettings } from 'react-icons/md';
+import {
+  HeaderContainer,
+  HeaderWrapper,
+  ActionsContainer,
+  NavContainer,
+  StyledNavLink,
+  UserIcon,
+  UserMenu,
+  UserMenuItem,
+  ExidIcon,
+  EnterIcon,
+  UserText,
+  IconContainer
+} from './styles';
+import FavouritesSidebar from '../ui/Sidebars/FavoritesSidebar';
+import { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { useCategories } from '@/lib/hooks/useCategories';
+import { useAuth } from '@/lib/hooks/useAuth';
+import Link from 'next/link';
+import SearchInput from '../ui/SearchInput';
+import {
+  ADMIN_PANEL_DASHBOARD_URL,
+  ADMIN_PANEL_URL,
+} from '@/lib/constants/url.contants';
+import Logo from '@/public/logo';
+import { useActions } from '@/lib/hooks/useActions';
+import { Role } from '@/lib/redux/user/user.interface';
 
-interface IProps {
-  variant?: 'full' | 'with-arr-path' | 'with-arr';
-  path?: string;
-}
 
-const checkVariant = (
-  variant?: 'full' | 'with-arr-path' | 'with-arr',
-  path?: string,
-) => {
-  switch (variant) {
-    case 'full':
-      return (
-        <div className="absolute z-10 flex w-full justify-between">
-          <ArrLeft />
-          {path === 'product' ? <Image src={cart} width={35} height={35} alt="cart" /> : <Image src={avatar} width={40} height={40} alt="avatar" />}
-        </div>
-      );
-    case 'with-arr-path':
-      return (
-        <div className="flex justify-start">
-          <ArrLeft />
-          <p className="ml-2 font-bold">{path?.toUpperCase()}</p>
-        </div>
-      );
-    case 'with-arr':
-      return (
-        <div className="flex justify-start">
-          <ArrLeft />
-        </div>
-      );
-    default:
-      return null;
-  }
-};
+export default function Header() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const { user } = useAuth();
+  const router = useRouter();
+  const { category } = useCategories();
+  const pathname = usePathname();
+  const { logout } = useActions();
+  const isActive = (path: string) => path === pathname;
 
-export default function Header({ variant, path }: IProps) {
+  const handleUserIconClick = () => {
+    
+      router.push(
+        !user || user.role === Role.USER ? ADMIN_PANEL_URL : ADMIN_PANEL_DASHBOARD_URL,
+      );
+  };
+
   return (
-    <header className="relative mt-[23px]">
-      {checkVariant(variant, path)}
-    </header>
+    <HeaderContainer>
+      <HeaderWrapper>
+        <NavContainer>
+            <Link href='/'>
+            <Logo/>
+            </Link>
+          {category?.data.map((cat) => (
+            <StyledNavLink
+              isActive={isActive(`/category/${cat.slug}`)}
+              key={cat.id}
+              href={`/category/${cat.slug}`}
+            >
+              {cat.name}
+            </StyledNavLink>
+          ))}
+        </NavContainer>
+        <SearchInput />
+        <ActionsContainer>
+          <MdAdminPanelSettings onClick={() => handleUserIconClick()} />
+          <IconContainer>
+          {user && user.role == Role.USER && (
+            <CiHeart onClick={() => setIsSidebarOpen(!isSidebarOpen)} />
+          )}
+          </IconContainer>
+          {isSidebarOpen && (
+            <FavouritesSidebar
+              isOpen={isSidebarOpen}
+              onClose={() => setIsSidebarOpen(!isSidebarOpen)}
+            />
+          )}
+          <IconContainer>
+          {user && user.role == Role.USER && (
+            <Link href="/cart">
+              <PiShoppingCartSimpleThin />
+            </Link>
+          )}
+          </IconContainer>
+          <UserIcon onClick={() => setIsOpen(!isOpen)} />
+            <UserMenu isOpen={isOpen}>
+              <UserMenuItem >
+                <UserText>{user ? 'Exit' : 'Enter'}</UserText>
+                {user ? 
+                <ExidIcon onClick={() => logout()}/>
+                 : 
+                 <EnterIcon onClick={() => router.push('/explore')}/>
+                }
+              </UserMenuItem>
+            </UserMenu>
+        </ActionsContainer>
+      </HeaderWrapper>
+    </HeaderContainer>
   );
 }
