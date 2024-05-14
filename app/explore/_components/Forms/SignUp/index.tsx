@@ -1,5 +1,11 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { FormContainer, Input, FormLabel, ErrorText , FieldContainer} from "../style";
+import {
+  FormContainer,
+  Input,
+  FormLabel,
+  ErrorText,
+  FieldContainer,
+} from '../style';
 import Button from '@/components/ui/Button';
 import { signUpSchema } from '@/schemas/authentication.schema';
 import { useActions } from '@/lib/hooks/useActions';
@@ -7,9 +13,8 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/lib/hooks/useAuth';
 
 const SignUp = () => {
-    const {register} = useActions();
-    const router = useRouter();
-
+  const { register } = useActions();
+  const router = useRouter();
 
   return (
     <Formik
@@ -18,36 +23,36 @@ const SignUp = () => {
         password: '',
         mobileNumber: '',
       }}
-      validationSchema={signUpSchema} 
+      validationSchema={signUpSchema}
       onSubmit={(data) => {
-        register(data);
+       register(data);
       }}
     >
       {({}) => (
         <Form>
-        <FormContainer>
+          <FormContainer>
             <FieldContainer>
-                <FormLabel>Email</FormLabel>
-                <Field type="email" name="email" as={Input} />
-                <ErrorMessage name="email" component={ErrorText}  />
+              <FormLabel>Email</FormLabel>
+              <Field type="email" name="email" as={Input} />
+              <ErrorMessage name="email" component={ErrorText} />
             </FieldContainer>
             <FieldContainer>
-                <FormLabel>Password</FormLabel>
-                <Field type="password" name="password" as={Input} />
-                <ErrorMessage name="password" component={ErrorText}  />
+              <FormLabel>Password</FormLabel>
+              <Field type="password" name="password" as={Input} />
+              <ErrorMessage name="password" component={ErrorText} />
             </FieldContainer>
             <FieldContainer>
-                <FormLabel>Mobile number</FormLabel>
-                <Field type="string" name="phone" as={Input} />
-                <ErrorMessage name="phone" component={ErrorText} />
+              <FormLabel>Mobile number</FormLabel>
+              <Field type="string" name="phone" as={Input} />
+              <ErrorMessage name="phone" component={ErrorText} />
             </FieldContainer>
-          
-                <Button
-                    onClick={() => router.replace('/')} 
-                    color="white" 
-                    label="Register"
-                />
-        </FormContainer>
+
+            <Button
+              onClick={() => router.replace('/')}
+              color="white"
+              label="Register"
+            />
+          </FormContainer>
         </Form>
       )}
     </Formik>

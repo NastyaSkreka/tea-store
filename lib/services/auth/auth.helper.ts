@@ -1,6 +1,6 @@
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '@/lib/constants/token.constants'
 import { IAuthResponse, ITokens } from '@/lib/redux/user/user.interface'
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie' 
 
 export const getAccessToken = () => {
     const accessToken = Cookies.get(ACCESS_TOKEN)

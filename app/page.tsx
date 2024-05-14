@@ -1,23 +1,27 @@
+"use client";
+
 import ProductExplorer from '@/components/Explorer';
 import Banner from '@/components/ui/Banner';
 import PageLayout from '@/components/ui/Layouts/pageLayout';
+import Loader from '@/components/ui/Loader';
+import NotFoundText from '@/components/ui/NotFoundText';
 import { ProductService } from '@/lib/services/product/product.service';
 import { TypeProductDataFilters } from '@/lib/services/product/product.types';
 import banner from '@/public/image/image1.png';
+import { useQuery } from '@tanstack/react-query';
 
-async function getProduct(searchParams: TypeProductDataFilters) {
-  const data = await ProductService.getAll(searchParams);
-  return data;
-}
-export const revalidate = 2400;
-
-export default async function Main({
+export default function Main({
   searchParams,
 }: {
   searchParams: TypeProductDataFilters;
 }) {
-  const data = await getProduct(searchParams);
 
+    const { data: products, isLoading} = useQuery({
+        queryKey: ['get products'],
+        queryFn: () => ProductService.getAll(searchParams),
+      });
+
+      console.log("products =>", products)
   return (
     <PageLayout>
       <Banner
@@ -25,7 +29,12 @@ export default async function Main({
         image={banner}
         position="textFirst"
       />
-      <ProductExplorer initialProducts={data} />
+      {isLoading ? (
+          <Loader />
+        ) : (
+          products ? <ProductExplorer initialProducts={products} /> : 
+          <NotFoundText text="No products in this category yet"/>
+        )}
     </PageLayout>
   );
 }
