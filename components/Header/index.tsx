@@ -14,7 +14,8 @@ import {
   ExidIcon,
   EnterIcon,
   UserText,
-  IconContainer
+  IconContainer, 
+  IconsWrapper
 } from './styles';
 import FavouritesSidebar from '../ui/Sidebars/FavoritesSidebar';
 import { useState } from 'react';
@@ -66,8 +67,10 @@ export default function Header() {
             </StyledNavLink>
           ))}
         </NavContainer>
-        <SearchInput />
+
         <ActionsContainer>
+        <SearchInput />
+        <IconsWrapper>
           <MdAdminPanelSettings onClick={() => handleUserIconClick()} />
           <IconContainer>
           {user && user.role == Role.USER && (
@@ -98,6 +101,7 @@ export default function Header() {
                 }
               </UserMenuItem>
             </UserMenu>
+            </IconsWrapper>
         </ActionsContainer>
       </HeaderWrapper>
     </HeaderContainer>

@@ -21,7 +21,7 @@ const SignUp = () => {
       initialValues={{
         email: '',
         password: '',
-        mobileNumber: '',
+        phone: '',
       }}
       validationSchema={signUpSchema}
       onSubmit={(data) => {

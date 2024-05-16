@@ -13,13 +13,18 @@ import {
 import { SORT_SELECT_DATA } from '@/lib/types/sort-select.data';
 import NotFoundText from '../ui/NotFoundText';
 import { TypePaginationProducts } from '@/lib/types/product.interface';
+import Loader from '../ui/Loader';
 
 export default function ProductExplorer({
   initialProducts,
+  isLoading,
 }: {
   initialProducts: TypePaginationProducts;
+  isLoading: any;
 }) {
   const { queryParams, updateQueryParams } = useFilters();
+
+  console.log("queryParams perPage =>", queryParams)
 
   const isProductsEmpty = initialProducts.products.length === 0;
   return (
@@ -41,7 +46,9 @@ export default function ProductExplorer({
             }
             title="Sort by"
           />
-          {isProductsEmpty ? (
+          {isLoading ? (
+            <Loader />
+          ) : isProductsEmpty ? (
             <NotFoundText text="Products not found" />
           ) : (
             <TeaCatalog products={initialProducts.products} />

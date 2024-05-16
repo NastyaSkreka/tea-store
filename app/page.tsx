@@ -1,10 +1,11 @@
-"use client";
+'use client';
 
 import ProductExplorer from '@/components/Explorer';
 import Banner from '@/components/ui/Banner';
 import PageLayout from '@/components/ui/Layouts/pageLayout';
 import Loader from '@/components/ui/Loader';
 import NotFoundText from '@/components/ui/NotFoundText';
+import { MainContent } from '@/lib/globals';
 import { ProductService } from '@/lib/services/product/product.service';
 import { TypeProductDataFilters } from '@/lib/services/product/product.types';
 import banner from '@/public/image/image1.png';
@@ -15,26 +16,23 @@ export default function Main({
 }: {
   searchParams: TypeProductDataFilters;
 }) {
+  const { data: products, isLoading } = useQuery({
+    queryKey: ['get products'],
+    queryFn: () => ProductService.getAll(searchParams),
+  });
 
-    const { data: products, isLoading} = useQuery({
-        queryKey: ['get products'],
-        queryFn: () => ProductService.getAll(searchParams),
-      });
-
-      console.log("products =>", products)
   return (
     <PageLayout>
-      <Banner
-        title="Unique collection Tea"
-        image={banner}
-        position="textFirst"
-      />
-      {isLoading ? (
-          <Loader />
-        ) : (
-          products ? <ProductExplorer initialProducts={products} /> : 
-          <NotFoundText text="No products in this category yet"/>
+      <MainContent>
+        <Banner
+          title="Unique collection Tea"
+          image={banner}
+          position="textFirst"
+        />
+        {products && (
+          <ProductExplorer initialProducts={products} isLoading={isLoading} />
         )}
+      </MainContent>
     </PageLayout>
   );
 }

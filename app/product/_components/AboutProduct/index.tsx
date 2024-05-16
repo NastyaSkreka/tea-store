@@ -31,7 +31,6 @@ export default function AboutProduct({ product }: { product: any }) {
   const [isModalOpen, setModalOpen] = useState(false);
   const { user } = useAuth();
 
-  console.log("user =>", user)
   return (
     <div>
       <StyledSection>

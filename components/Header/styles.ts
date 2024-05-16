@@ -57,8 +57,7 @@ export const HeaderWrapper = styled.div`
 
 export const ActionsContainer = styled.div`
   display: flex;
-  font-size: 28px;
-  cursor: pointer;
+  align-items: center;
   gap: 15px;
 `;
 export const NavContainer = styled.div`
@@ -66,6 +65,14 @@ export const NavContainer = styled.div`
   gap: 10px;
   align-items: center;
 `;
+
+export const IconsWrapper = styled.div`
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 15px;
+`
 
 export const UserIcon = styled(PiUserCircleThin)`
 

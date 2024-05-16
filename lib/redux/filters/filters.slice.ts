@@ -8,7 +8,7 @@ const initialState: IFiltersState = {
         sort: EnumProductSort.NEWEST, 
         searchTerm: '', 
         page: 1, 
-        perPage: 7,
+        perPage: 12,
         rating: ''
     }
 }
